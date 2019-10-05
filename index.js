@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const brad = '@UJT4QPQ90'
+const brad = 'UJT4QPQ90'
 const request = require('request');
 
 function thankBrad(token, event){
@@ -40,7 +40,8 @@ app.post('/', function(req, res){
     }
     console.log('my bot payload', body);
     const event = body ? body.event : null;
-    console.log('EVENT TYPE', typeof event)
+    console.log('text type', typeof event.text);
+    console.log('isitbrad', event.text.indexOf(brad) > -1)
 
     if (typeof event.text === 'string' && event.text.indexOf(brad) > -1){
         thankBrad(body.token, event);
