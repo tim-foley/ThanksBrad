@@ -8,18 +8,22 @@ function thankBrad(token, event, cb) {
     if (typeof event !== 'object') return cb();
 
     const THANKS_MESSAGES = [
-        'Thanks!'
+        'Thanks',
+        'Salutations',
+        'Much appreciated',
+        'Thank you',
+        'I appreciate you, '
+
     ]
     console.log('TOKEN', process.env.TOKEN)
     const body = JSON.stringify({
         token: process.env.TOKEN,
         channel: event.channel,
-        text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}> !`,
-        thread_ts: event.thread_ts || undefined,
-        username: 'Brad Boyes'
+        text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}>!`,
+        thread_ts: event.thread_ts || undefined
     })
     console.log('body', body)
-    request.post('https://slack.com/api.chat.postMessage', { body }, (err, result) => {
+    request.post('https://slack.com/api/chat.postMessage', { body }, (err, result) => {
         if (err) {
             console.error('AN ERROR OCCURRED', err);
             cb(err);
