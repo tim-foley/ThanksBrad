@@ -10,8 +10,9 @@ function thankBrad(token, event, cb) {
     const THANKS_MESSAGES = [
         'Thanks!'
     ]
+    console.log('TOKEN', process.env.TOKEN)
     const body = JSON.stringify({
-        token: token,
+        token: process.env.TOKEN,
         channel: event.channel,
         text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}> !`,
         thread_ts: event.thread_ts || undefined,
