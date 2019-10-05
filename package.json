@@ -4,7 +4,8 @@
   "description": "A slack bot for people to thank Brad",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "node index.js"
   },
   "keywords": [
     "Thanks",
