@@ -4,8 +4,8 @@ const app = express();
 const brad = 'UJT4QPQ90'
 const request = require('request');
 
-function thankBrad(token, event) {
-    if (!typeof event !== 'object') return;
+function thankBrad(token, event, cb) {
+    if (!typeof event !== 'object') return cb();
 
     const THANKS_MESSAGES = [
         'Thanks!'
@@ -21,8 +21,10 @@ function thankBrad(token, event) {
     request.post('https://slack.com/api.chat.postMessage', { body }, (err, result) => {
         if (err) {
             console.error('AN ERROR OCCURRED', err);
+            cb(err);
             return;
         }
+        cb(null, result)
         console.log('result', result)
     })
 }
@@ -45,9 +47,11 @@ app.post('/', function (req, res) {
     console.log('isitbrad', event.text.indexOf(brad) > -1)
 
     if (typeof event.text === 'string' && event.text.indexOf(brad) > -1) {
-        thankBrad(body.token, event);
-        res.status(200).send({});
-        return;
+        thankBrad(body.token, event, (err, result) => {
+            res.status(200).send({err: err, result: result});
+            return;
+        });
+        
     }
 
     res.status(200).send('OK')
