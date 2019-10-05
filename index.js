@@ -16,9 +16,9 @@ function thankBrad(token, event, cb) {
         'Much appreciated',
         `All in a day's work`,
         'I appreciate you, '
-        `No problemo, `
-        `Happy to help, `
-        `Easy peasy, `
+        `No problemo, `,
+        `Happy to help, `,
+        `Easy peasy, `,
 
     ]
     
