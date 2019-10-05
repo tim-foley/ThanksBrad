@@ -8,10 +8,10 @@ function thankBrad(token, event, cb) {
     if (typeof event !== 'object') return cb();
 
     const THANKS_MESSAGES = [
-        'Thanks',
-        'Salutations',
+        `You're welcome`,
+        'No problem',
         'Much appreciated',
-        'Thank you',
+        `All in a day's work`,
         'I appreciate you, '
 
     ]
