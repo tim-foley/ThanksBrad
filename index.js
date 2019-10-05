@@ -10,13 +10,13 @@ function thankBrad(token, event, cb) {
     const THANKS_MESSAGES = [
         'Thanks!'
     ]
-    const body = {
+    const body = JSON.stringify({
         token: token,
         channel: event.channel,
         text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}> !`,
         thread_ts: event.thread_ts || undefined,
         username: 'Brad Boyes'
-    }
+    })
     console.log('body', body)
     request.post('https://slack.com/api.chat.postMessage', { body }, (err, result) => {
         if (err) {
