@@ -25,7 +25,7 @@ function thankBrad(token, event, cb) {
             return;
         }
         cb(null, result)
-        console.log('result', result)
+        console.log('result', result.body)
     })
 }
 
