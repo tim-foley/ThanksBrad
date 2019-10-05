@@ -18,7 +18,7 @@ function thankBrad(token, event, cb) {
     
     const body = JSON.stringify({
         channel: event.channel,
-        text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}>!`,
+        text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <@${event.user}>!`,
         thread_ts: event.thread_ts || undefined
     })
 
