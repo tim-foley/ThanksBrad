@@ -5,7 +5,7 @@ const brad = 'UJT4QPQ90'
 const request = require('request');
 
 function thankBrad(token, event, cb) {
-    if (!typeof event !== 'object') return cb();
+    if (typeof event !== 'object') return cb();
 
     const THANKS_MESSAGES = [
         'Thanks!'
