@@ -4,7 +4,7 @@ const app = express();
 const brad = '@UJT4QPQ90'
 const request = require('request');
 
-function thankBrad(event){
+function thankBrad(token, event){
     if (!typeof event !== 'object') return;
 
     const THANKS_MESSAGES = [
@@ -12,7 +12,7 @@ function thankBrad(event){
     ]
     request.post('https://slack.com/api.chat.postMessage', {
         body: {
-            token: event.token,
+            token: token,
             channel: event.channel,
             text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}> !`,
             thread_ts: event.thread_ts || undefined,
@@ -40,8 +40,10 @@ app.post('/', function(req, res){
     }
     console.log('my bot payload', body);
     const event = body ? body.event : null;
+    console.log('EVENT TYPE', typeof event)
+
     if (typeof event.text === 'string' && event.text.indexOf(brad) > -1){
-        thankBrad(event);
+        thankBrad(body.token, event);
         res.status(200).send({});
         return;
     }
