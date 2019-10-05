@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const brad = 'UJT4QPQ90'
+const bradOnEachTeam = {
+    'TDJ8STMFE': 'UJT4QPQ90',
+    'T2TJSK16K': ''
+}
 const request = require('request');
 
 function thankBrad(token, event, cb) {
@@ -50,9 +53,9 @@ app.post('/', function (req, res) {
         res.status(200).send({ challenge: body.challenge });
         return;
     }
-    
+    console.log('body', body)
     const event = body ? body.event : null;
-
+    let brad = bradOnEachTeam[event.team];
     if (typeof event.text === 'string' && event.text.toLowerCase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
         thankBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
