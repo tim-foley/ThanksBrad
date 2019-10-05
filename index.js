@@ -19,7 +19,13 @@ function thankBrad(token, event, cb) {
         `No problemo, `,
         `Happy to help, `,
         `Easy peasy, `,
-
+        `My pleasure, `,
+        'You got it, ',
+        `Don't mention it, `,
+        `Not a problem`,
+        `It was nothing, `,
+        `I'm happy to help, `,
+        `Anytime `,
     ]
     
     const body = JSON.stringify({
