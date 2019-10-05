@@ -22,7 +22,7 @@ function thankBrad(event){
             console.error('AN ERROR OCCURRED', err);
             return;
         }
-
+        console.log('result', result)
     })
 }
 
