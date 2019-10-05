@@ -53,7 +53,7 @@ app.post('/', function (req, res) {
     
     const event = body ? body.event : null;
 
-    if (typeof event.text === 'string' && event.text.toLowercase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
+    if (typeof event.text === 'string' && event.text.toLowerCase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
         thankBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
             return;
