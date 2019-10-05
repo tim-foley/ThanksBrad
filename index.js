@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const bradOnEachTeam = {
     'TDJ8STMFE': 'UJT4QPQ90',
-    'T2TJSK16K': ''
+    'T2TJSK16K': 'UGACR0GE4'
 }
 const request = require('request');
 
