@@ -17,13 +17,17 @@ function thankBrad(token, event, cb) {
     ]
     
     const body = JSON.stringify({
-        token: process.env.TOKEN,
         channel: event.channel,
         text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <${event.user}>!`,
         thread_ts: event.thread_ts || undefined
     })
 
-    request.post('https://slack.com/api/chat.postMessage', { body, headers: {'Content-Type': 'application/json' } }, (err, result) => {
+    request.post('https://slack.com/api/chat.postMessage', { 
+        body, 
+        headers: {
+        'Authorization': `Bearer ${process.env.TOKEN}`,
+        'Content-Type': 'application/json' } 
+    }, (err, result) => {
         if (err) {
             console.error('AN ERROR OCCURRED', err);
             cb(err);
@@ -46,12 +50,10 @@ app.post('/', function (req, res) {
         res.status(200).send({ challenge: body.challenge });
         return;
     }
-    console.log('my bot payload', body);
+    
     const event = body ? body.event : null;
-    console.log('text type', typeof event.text);
-    console.log('isitbrad', event.text.indexOf(brad) > -1)
 
-    if (typeof event.text === 'string' && event.text.indexOf(brad) > -1) {
+    if (typeof event.text === 'string' && event.text.toLowercase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
         thankBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
             return;
