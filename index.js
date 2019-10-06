@@ -41,12 +41,10 @@ function thankBrad(token, event, cb) {
         'Content-Type': 'application/json' } 
     }, (err, result) => {
         if (err) {
-            console.error('AN ERROR OCCURRED', err);
             cb(err);
             return;
         }
         cb(null, result)
-        console.log('result', result.body)
     })
 }
 
@@ -62,7 +60,6 @@ app.post('/', function (req, res) {
         res.status(200).send({ challenge: body.challenge });
         return;
     }
-    console.log('body', body)
     const event = body ? body.event : null;
     let brad = bradOnEachTeam[event.team];
     if (typeof event.text === 'string' && event.text.toLowerCase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
