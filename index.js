@@ -28,6 +28,11 @@ function thankBrad(token, event, cb) {
         `Anytime `,
     ]
     
+    if (event.user.indexOf('U2TV91VSA') > -1){
+        //we don't allow spencer to have this kind of fun
+        cb();
+        return;
+    }
     const body = JSON.stringify({
         channel: event.channel,
         text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <@${event.user}>!`,
