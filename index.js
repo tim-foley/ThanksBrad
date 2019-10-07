@@ -26,6 +26,19 @@ function thankBrad(token, event, cb) {
         `It was nothing, `,
         `I'm happy to help, `,
         `Anytime `,
+        `You got it, `,
+        `Oh, anytime `,
+        `It was the least I could do `,
+        `Think nothing of it, `,
+        `At your service, `,
+        `By all means, `,
+        `Anything for you, `,
+        `Glad I could help, `,
+        `It's my duty, `,
+        `Glad to be of any assistance, `,
+        `It's all good, `, 
+        `Sure thing, `,
+        `No worries `,
     ]
     
     if (event.user.indexOf('U2TV91VSA') > -1){
