@@ -1,57 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const request = require('request');
 const app = express();
+let inMemCache = {}
+
 const bradOnEachTeam = {
     'TDJ8STMFE': 'UJT4QPQ90',
     'T2TJSK16K': 'UGACR0GE4'
-}
-const request = require('request');
+};
 
-function thankBrad(token, event, cb) {
-    if (typeof event !== 'object') return cb();
 
-    const THANKS_MESSAGES = [
-        `You're welcome`,
-        'No problem',
-        'Much appreciated',
-        `All in a day's work`,
-        'I appreciate you, ',
-        `No problemo, `,
-        `Happy to help, `,
-        `Easy peasy, `,
-        `My pleasure, `,
-        'You got it, ',
-        `Don't mention it, `,
-        `Not a problem`,
-        `It was nothing, `,
-        `I'm happy to help, `,
-        `Anytime `,
-    ]
-    
-    if (event.user.indexOf('U2TV91VSA') > -1){
-        //we don't allow spencer to have this kind of fun
-        cb();
-        return;
-    }
-    const body = JSON.stringify({
-        channel: event.channel,
-        text: `${THANKS_MESSAGES[Math.floor(Math.random() * THANKS_MESSAGES.length)]} <@${event.user}>!`,
-        thread_ts: event.thread_ts || undefined
-    })
 
-    request.post('https://slack.com/api/chat.postMessage', { 
-        body, 
-        headers: {
-        'Authorization': `Bearer ${process.env.TOKEN}`,
-        'Content-Type': 'application/json' } 
-    }, (err, result) => {
-        if (err) {
-            cb(err);
-            return;
-        }
-        cb(null, result)
-    })
-}
 
 
 app.use(bodyParser());
@@ -79,5 +38,79 @@ app.post('/', function (req, res) {
     }
     
 })
+
+function thankBrad(token, event, cb) {
+    if (typeof event !== 'object') return cb();
+
+    
+    const body = JSON.stringify({
+        channel: event.channel,
+        text: `${determineMessage(event)} <@${event.user}>!`,
+        thread_ts: event.thread_ts || undefined
+    })
+
+    request.post('https://slack.com/api/chat.postMessage', { 
+        body, 
+        headers: {
+        'Authorization': `Bearer ${process.env.TOKEN}`,
+        'Content-Type': 'application/json' } 
+    }, (err, result) => {
+        if (err) {
+            cb(err);
+            return;
+        }
+        cb(null, result)
+    })
+}
+
+function bradAbuseDetected(){
+    return false;
+}
+
+function determineMessage(event){
+    let listToUse;
+
+    const THANKS_MESSAGES = [
+        `You're welcome`,
+        'No problem',
+        'Much appreciated',
+        `All in a day's work`,
+        'I appreciate you, ',
+        `No problemo, `,
+        `Happy to help, `,
+        `Easy peasy, `,
+        `My pleasure, `,
+        'You got it, ',
+        `Don't mention it, `,
+        `Not a problem`,
+        `It was nothing, `,
+        `I'm happy to help, `,
+        `Anytime `,
+    ];
+
+    const SPENCER_MESSAGES = [
+        `Just doing your job`,
+        `Even you could have done that`,
+        `Thanks, I sacrificed many lives for it`,
+        `Thanks, but I prefer not to be noticed for my intellectual superiority`,
+        `Give me a pen and I'll give you my autograph`,
+        `Why?`
+    ]
+    const BRAD_BOT_ABUSE  = [
+
+    ];
+    
+    if (bradAbuseDetected()){
+        listToUse = BRAD_BOT_ABUSE;
+    }
+    else if (event.user.indexOf('U2TV91VSA') > -1){
+        listToUse = SPENCER_MESSAGES;
+    }
+    else{
+        listToUse = THANKS_MESSAGES;
+    }
+
+    return listToUse[Math.floor(Math.random() * listToUse.length)];
+}
 
 app.listen(process.env.PORT || 4747, () => console.log('Server is live and good'));
