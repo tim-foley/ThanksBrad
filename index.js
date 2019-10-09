@@ -9,10 +9,6 @@ const bradOnEachTeam = {
     'T2TJSK16K': 'UGACR0GE4'
 };
 
-
-
-
-
 app.use(bodyParser());
 app.post('/', function (req, res) {
     const body = req.body;
@@ -63,10 +59,6 @@ function thankBrad(token, event, cb) {
     })
 }
 
-function bradAbuseDetected(){
-    return false;
-}
-
 function determineMessage(event){
     let listToUse;
 
@@ -86,6 +78,19 @@ function determineMessage(event){
         `It was nothing, `,
         `I'm happy to help, `,
         `Anytime `,
+        `You got it, `,
+        `Oh, anytime `,
+        `It was the least I could do `,
+        `Think nothing of it, `,
+        `At your service, `,
+        `By all means, `,
+        `Anything for you, `,
+        `Glad I could help, `,
+        `It's my duty, `,
+        `Glad to be of any assistance, `,
+        `It's all good, `, 
+        `Sure thing, `,
+        `No worries `,
     ];
 
     const SPENCER_MESSAGES = [
@@ -94,7 +99,7 @@ function determineMessage(event){
         `Thanks, I sacrificed many lives for it`,
         `Thanks, but I prefer not to be noticed for my intellectual superiority`,
         `Give me a pen and I'll give you my autograph`,
-        `Why?`
+        `Why`
     ]
     const BRAD_BOT_ABUSE  = [
 
@@ -111,6 +116,10 @@ function determineMessage(event){
     }
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
+}
+
+function bradAbuseDetected(){
+    return false;
 }
 
 app.listen(process.env.PORT || 4747, () => console.log('Server is live and good'));
