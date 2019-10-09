@@ -59,9 +59,7 @@ function thankBrad(token, event, cb) {
             return;
         }
         let userMessageCount = myCache.get(event.user);
-        console.log(`Cached user message count for ${event.user}, ${userMessageCount}`)
         const numMessages = userMessageCount ? userMessageCount + 1 : 1;
-        console.log(`User ${event.user} has thanked Brad ${numMessages} times in a ${stdTTL} second period `)
         myCache.set(event.user, numMessages);
 
         cb(null, result)
