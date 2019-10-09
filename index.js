@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
+const nodeCache = require('node-cache');
+const stdTTL = 30;
+const myCache = new nodeCache({stdTTL, checkperiod: 60});
+
 const app = express();
-let inMemCache = {}
 
 const bradOnEachTeam = {
     'TDJ8STMFE': 'UJT4QPQ90',
@@ -55,6 +58,11 @@ function thankBrad(token, event, cb) {
             cb(err);
             return;
         }
+        const userMessageCount = myCache.get(event.user);
+        const numMessages = userMessageCount++ || 1;
+        console.log(`User ${event.user} has thanked Brad ${numMessages} times in a ${stdTTL} second period `)
+        myCache.set(event.user, numMessages);
+
         cb(null, result)
     })
 }
@@ -114,8 +122,8 @@ function determineMessage(event){
         'De nada',
         'Ain\'t no thang',
     ];
-
-    if (bradAbuseDetected()){
+      
+    if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
     else if (event.user.indexOf('U2TV91VSA') > -1){
@@ -128,7 +136,11 @@ function determineMessage(event){
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
 
-function bradAbuseDetected(){
+function bradAbuseDetected(event){
+    const userMessageCount = myCache.get(event.user);
+    if (userMessageCount && userMessageCount > 3){
+        return true;
+    }
     return false;
 }
 
