@@ -139,7 +139,7 @@ function determineMessage(event){
 
 function bradAbuseDetected(user){
     const userMessageCount = myCache.get(user);
-    if (userMessageCount && userMessageCount > 3){
+    if (userMessageCount && userMessageCount >= 3){
         return true;
     }
     return false;
