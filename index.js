@@ -27,29 +27,29 @@ app.post('/', function (req, res) {
             res.status(200).send({err: err, result: result});
             return;
         });
-        
+
     }
     else{
         res.status(200).send('OK')
     }
-    
+
 })
 
 function thankBrad(token, event, cb) {
     if (typeof event !== 'object') return cb();
 
-    
+
     const body = JSON.stringify({
         channel: event.channel,
         text: `${determineMessage(event)} <@${event.user}>!`,
         thread_ts: event.thread_ts || undefined
     })
 
-    request.post('https://slack.com/api/chat.postMessage', { 
-        body, 
+    request.post('https://slack.com/api/chat.postMessage', {
+        body,
         headers: {
-        'Authorization': `Bearer ${process.env.TOKEN}`,
-        'Content-Type': 'application/json' } 
+            'Authorization': `Bearer ${process.env.TOKEN}`,
+            'Content-Type': 'application/json' }
     }, (err, result) => {
         if (err) {
             cb(err);
@@ -62,7 +62,10 @@ function thankBrad(token, event, cb) {
 function determineMessage(event){
     let listToUse;
     const BRAD_BOT_ABUSE  = [
-
+        'Cool it now, I have other things to do besides receive your praise,',
+        'Ok, this has been fun, but you should probably get back to work now,',
+        'I heard you the first time, Jeeze!',
+        'Keep this up and you\'ll burn through my free Heroku plan!',
     ];
     const SPENCER_MESSAGES = [
         `Just doing your job`,
@@ -71,40 +74,47 @@ function determineMessage(event){
         `Thanks, but I prefer not to be noticed for my intellectual superiority`,
         `Give me a pen and I'll give you my autograph`,
         `Why`,
-        `:expressionless: `
+        `:expressionless:`,
+        ':fp:',
+        'Did somebody forget to feed the',
+        'Could someone please take care of',
     ];
-
     const THANKS_MESSAGES = [
         `You're welcome`,
         'No problem',
         'Much appreciated',
         `All in a day's work`,
-        'I appreciate you, ',
-        `No problemo, `,
-        `Happy to help, `,
-        `Easy peasy, `,
-        `My pleasure, `,
-        'You got it, ',
-        `Don't mention it, `,
+        'I appreciate you,',
+        `No problemo,`,
+        `Happy to help,`,
+        `Easy peasy,`,
+        'Easy peasy lemon squeezy,',
+        `My pleasure,`,
+        'You got it,',
+        'You got it, dude',
+        `Don't mention it,`,
         `Not a problem`,
-        `It was nothing, `,
-        `I'm happy to help, `,
-        `Anytime `,
-        `You got it, `,
-        `Oh, anytime `,
-        `It was the least I could do `,
-        `Think nothing of it, `,
-        `At your service, `,
-        `By all means, `,
-        `Anything for you, `,
-        `Glad I could help, `,
-        `It's my duty, `,
-        `Glad to be of any assistance, `,
-        `It's all good, `, 
-        `Sure thing, `,
-        `No worries `,
+        `It was nothing,`,
+        `I'm happy to help,`,
+        `Anytime`,
+        `You got it,`,
+        `Oh, anytime`,
+        `It was the least I could do`,
+        `Think nothing of it,`,
+        `At your service,`,
+        `By all means,`,
+        `Anything for you,`,
+        `Glad I could help,`,
+        `It's my duty,`,
+        `Glad to be of any assistance,`,
+        `It's all good,`,
+        `Sure thing,`,
+        `No worries`,
+        'Helping is my business, and business is good!',
+        'De nada',
+        'Ain\'t no thang',
     ];
-      
+
     if (bradAbuseDetected()){
         listToUse = BRAD_BOT_ABUSE;
     }
