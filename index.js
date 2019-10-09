@@ -136,8 +136,8 @@ function determineMessage(event){
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
 
-function bradAbuseDetected(event){
-    const userMessageCount = myCache.get(event.user);
+function bradAbuseDetected(user){
+    const userMessageCount = myCache.get(user);
     if (userMessageCount && userMessageCount > 3){
         return true;
     }
