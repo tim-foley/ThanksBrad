@@ -70,7 +70,8 @@ function determineMessage(event){
         `Thanks, I sacrificed many lives for it`,
         `Thanks, but I prefer not to be noticed for my intellectual superiority`,
         `Give me a pen and I'll give you my autograph`,
-        `Why`
+        `Why`,
+        `:expressionless: `
     ];
 
     const THANKS_MESSAGES = [
