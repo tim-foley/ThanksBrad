@@ -61,6 +61,17 @@ function thankBrad(token, event, cb) {
 
 function determineMessage(event){
     let listToUse;
+    const BRAD_BOT_ABUSE  = [
+
+    ];
+    const SPENCER_MESSAGES = [
+        `Just doing your job`,
+        `Even you could have done that`,
+        `Thanks, I sacrificed many lives for it`,
+        `Thanks, but I prefer not to be noticed for my intellectual superiority`,
+        `Give me a pen and I'll give you my autograph`,
+        `Why`
+    ];
 
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -92,19 +103,7 @@ function determineMessage(event){
         `Sure thing, `,
         `No worries `,
     ];
-
-    const SPENCER_MESSAGES = [
-        `Just doing your job`,
-        `Even you could have done that`,
-        `Thanks, I sacrificed many lives for it`,
-        `Thanks, but I prefer not to be noticed for my intellectual superiority`,
-        `Give me a pen and I'll give you my autograph`,
-        `Why`
-    ]
-    const BRAD_BOT_ABUSE  = [
-
-    ];
-    
+      
     if (bradAbuseDetected()){
         listToUse = BRAD_BOT_ABUSE;
     }
