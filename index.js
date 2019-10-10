@@ -27,7 +27,7 @@ app.post('/', function (req, res) {
     let brad = bradOnEachTeam[event.team];
     
     
-    if (typeof event.text === 'string' && IS_ACCEPTABLE_PHRASE && event.text.indexOf(brad) > -1) {
+    if (typeof event.text === 'string' && event.text.indexOf(brad) > -1) {
         messageAsBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
             return;
@@ -70,7 +70,6 @@ function messageAsBrad(token, event, cb) {
 
 function determineMessage(event){
     const eventText = event.text.replace(/[ \'\"]/g, '');
-    console.log('event text', eventText)
     const IS_THANKS_MESSAGE = [
         'thanks',
         'thankyou',
