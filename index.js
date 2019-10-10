@@ -69,16 +69,16 @@ function messageAsBrad(token, event, cb) {
 }
 
 function determineMessage(event){
-    const eventText = event.text.replace(/[ \'\"]/g, '');
-    console.log('event text', eventText);
+    const eventText = event.text.toLowerCase().replace(/[ \'\"]/g, '');
+    
     const IS_THANKS_MESSAGE = [
         'thanks',
         'thankyou',
-    ].find(phrase => event.text.toLowerCase().indexOf(eventText) > -1);
+    ].find(phrase => eventText.indexOf(phrase) > -1);
 
     const IS_DONUTS_MESSAGE = [
         'donuts'
-    ].find(phrase => event.text.toLowerCase().indexOf(eventText) > -1);
+    ].find(phrase => eventText.indexOf(phrase) > -1);
 
     let listToUse;
     const BRAD_BOT_ABUSE  = [
