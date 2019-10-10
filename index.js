@@ -73,7 +73,7 @@ function determineMessage(event){
     
     const IS_THANKS_MESSAGE = [
         'thanks',
-        'thx'
+        'thx',
         'thankyou',
     ].find(phrase => eventText.indexOf(phrase) > -1);
 
