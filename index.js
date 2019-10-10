@@ -70,6 +70,7 @@ function messageAsBrad(token, event, cb) {
 
 function determineMessage(event){
     const eventText = event.text.replace(/[ \'\"]/g, '');
+    console.log('event text', eventText)
     const IS_THANKS_MESSAGE = [
         'thanks',
         'thankyou',
@@ -139,7 +140,9 @@ function determineMessage(event){
         `Why not go to McDonalds for those donuts `,
         `I recommend finding donutless donuts `,
         'Donuts with sprinkles - hold the donut, sprinkles on the side ',
-        'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it '
+        'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it ',
+        'I brought in some keto doughnuts, with extra gluten! Just for you ',
+        'I bet you would love some Active donuts'
     ]
       
     if (bradAbuseDetected(event.user)){
