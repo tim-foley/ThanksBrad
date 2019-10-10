@@ -25,13 +25,10 @@ app.post('/', function (req, res) {
     }
     const event = body ? body.event : null;
     let brad = bradOnEachTeam[event.team];
-    const IS_ACCEPTABLE_PHRASE = [
-        'thanks',
-        'thank you'
-    ].find(phrase => event.text.toLowerCase().indexOf(phrase) > -1)
+    
     
     if (typeof event.text === 'string' && IS_ACCEPTABLE_PHRASE && event.text.indexOf(brad) > -1) {
-        thankBrad(body.token, event, (err, result) => {
+        messageAsBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
             return;
         });
@@ -43,7 +40,7 @@ app.post('/', function (req, res) {
 
 })
 
-function thankBrad(token, event, cb) {
+function messageAsBrad(token, event, cb) {
     if (typeof event !== 'object') return cb();
 
 
@@ -72,6 +69,16 @@ function thankBrad(token, event, cb) {
 }
 
 function determineMessage(event){
+    const eventText = event.text.replace(/[ \'\"]/g, '');
+    const IS_THANKS_MESSAGE = [
+        'thanks',
+        'thankyou',
+    ].find(phrase => event.text.toLowerCase().indexOf(eventText) > -1);
+
+    const IS_DONUTS_MESSAGE = [
+        'donuts'
+    ].find(phrase => event.text.toLowerCase().indexOf(eventText) > -1);
+
     let listToUse;
     const BRAD_BOT_ABUSE  = [
         'Cool it now, I have other things to do besides receive your praise,',
@@ -126,16 +133,31 @@ function determineMessage(event){
         'De nada',
         'Ain\'t no thang',
     ];
+
+    const DONUT_MESSAGES = [
+        `QT has great donuts `,
+        `Why not go to McDonalds for those donuts `,
+        `I recommend finding donutless donuts `,
+        'Donuts with sprinkles - hold the donut, sprinkles on the side ',
+        'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it '
+    ]
       
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
-    else if (event.user.indexOf('U2TV91VSA') > -1){
-        listToUse = SPENCER_MESSAGES;
+
+    else if (IS_THANKS_MESSAGE){
+        if (event.user.indexOf('U2TV91VSA') > -1){
+            listToUse = SPENCER_MESSAGES;
+        }
+        else{
+            listToUse = THANKS_MESSAGES;
+        }
     }
-    else{
-        listToUse = THANKS_MESSAGES;
+    else if (IS_DONUTS_MESSAGE){
+        listToUse = DONUT_MESSAGES;
     }
+    
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
