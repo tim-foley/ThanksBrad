@@ -25,7 +25,12 @@ app.post('/', function (req, res) {
     }
     const event = body ? body.event : null;
     let brad = bradOnEachTeam[event.team];
-    if (typeof event.text === 'string' && event.text.toLowerCase().indexOf('thanks') > -1 && event.text.indexOf(brad) > -1) {
+    const IS_ACCEPTABLE_PHRASE = [
+        'thanks',
+        'thank you'
+    ].find(phrase => event.text.toLowerCase().indexOf(phrase) > -1)
+    
+    if (typeof event.text === 'string' && IS_ACCEPTABLE_PHRASE && event.text.indexOf(brad) > -1) {
         thankBrad(body.token, event, (err, result) => {
             res.status(200).send({err: err, result: result});
             return;
