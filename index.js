@@ -143,7 +143,8 @@ function determineMessage(event){
         'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it,',
         'I brought in some keto doughnuts, with extra gluten! Just for you,',
         'I bet you would love some Active donuts,',
-        'Would you like a :fist: Hurtz Donut,'
+        'Would you like a :fist: Hurtz Donut,',
+        'DONUT TELL ME WHAT TO DO'
     ]
       
     if (bradAbuseDetected(event.user)){
