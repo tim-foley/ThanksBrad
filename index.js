@@ -77,7 +77,8 @@ function determineMessage(event){
     ].find(phrase => eventText.indexOf(phrase) > -1);
 
     const IS_DONUTS_MESSAGE = [
-        'donuts'
+        'donuts',
+        'doughnuts'
     ].find(phrase => eventText.indexOf(phrase) > -1);
 
     let listToUse;
