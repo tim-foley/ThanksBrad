@@ -70,6 +70,7 @@ function messageAsBrad(token, event, cb) {
 
 function determineMessage(event){
     const eventText = event.text.replace(/[ \'\"]/g, '');
+    console.log('event text', eventText);
     const IS_THANKS_MESSAGE = [
         'thanks',
         'thankyou',
