@@ -136,12 +136,12 @@ function determineMessage(event){
     ];
 
     const DONUT_MESSAGES = [
-        `QT has great donuts `,
-        `Why not go to McDonalds for those donuts `,
-        `I recommend finding donutless donuts `,
-        'Donuts with sprinkles - hold the donut, sprinkles on the side ',
-        'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it ',
-        'I brought in some keto doughnuts, with extra gluten! Just for you ',
+        `QT has great donuts`,
+        `Why not go to McDonalds for those donuts`,
+        `I recommend finding donutless donuts`,
+        'Donuts with sprinkles - hold the donut, sprinkles on the side',
+        'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it',
+        'I brought in some keto doughnuts, with extra gluten! Just for you',
         'I bet you would love some Active donuts'
     ]
       
