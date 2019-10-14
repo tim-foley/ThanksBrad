@@ -82,6 +82,10 @@ function determineMessage(event){
         'doughnuts'
     ].find(phrase => eventText.indexOf(phrase) > -1);
 
+    const IS_BACON_MESSAGE = [
+        'bacon'
+    ].find(phrase => eventText.indexOf(phrase) > -1);
+    
     let listToUse;
     const BRAD_BOT_ABUSE  = [
         'Cool it now, I have other things to do besides receive your praise,',
@@ -100,6 +104,7 @@ function determineMessage(event){
         ':fp:',
         'Did somebody forget to feed the',
         'Could someone please take care of',
+        'Did you actually pay for that haircut',
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -149,6 +154,14 @@ function determineMessage(event){
         'DONUT TELL ME WHAT TO DO'
     ]
       
+    const BACON_MESSAGES = [
+        'mmmm.... bacon!',
+        'Did someone say bacon?',
+        ':bacon:',
+        ':alert_bacon:',
+        `IT'S BACON!!!`
+    ]
+    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
@@ -164,7 +177,9 @@ function determineMessage(event){
     else if (IS_DONUTS_MESSAGE){
         listToUse = DONUT_MESSAGES;
     }
-    
+    else if (IS_BACON_MESSAGE) {
+        listToUse = BACON_MESSAGES;
+    }
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
