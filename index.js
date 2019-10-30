@@ -86,12 +86,17 @@ function determineMessage(event){
         'bacon'
     ].find(phrase => eventText.indexOf(phrase) > -1);
     
+    const IS_BYE_MESSAGE = [
+        'bye',
+    ].find(phrase => eventText.indexOf(phrase) > -1);    
+    
     let listToUse;
     const BRAD_BOT_ABUSE  = [
         'Cool it now, I have other things to do besides receive your praise,',
         'Ok, this has been fun, but you should probably get back to work now,',
         'I heard you the first time, Jeeze!',
         'Keep this up and you\'ll burn through my free Heroku plan!',
+        'Stop talking to me', 
     ];
     const SPENCER_MESSAGES = [
         `Just doing your job`,
@@ -105,6 +110,25 @@ function determineMessage(event){
         'Did somebody forget to feed the',
         'Could someone please take care of',
         'Did you actually pay for that haircut',
+        'I thought that the judge also said that you could not talk to me',
+        'Did you dress in the dark today',
+        'Oh, are you still here',        
+    ];
+    const BYE_MESSAGES = [
+        'Autobots! Roll out!',
+        'Freedom is the right of all sentient beings',
+        'Until I return I\'m leaving you in command. I know you won\’t let me down',
+        'This universe, no matter how vast will never be big enough for you and I to coexist',
+        'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
+        'It\’s been an honor serving with you',
+        'Bye',
+        'Laters',
+        'Peace out',
+        'May the Force be with you',
+        'Toodles',
+        'Fare thee well',
+        'Live long and prosper',
+        'Bye Felicia, I mean',
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -180,6 +204,9 @@ function determineMessage(event){
     else if (IS_BACON_MESSAGE) {
         listToUse = BACON_MESSAGES;
     }
+    else if (IS_BYE_MESSAGE) {
+        listToUser = BYE_MESSAGES;   
+    }    
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
