@@ -99,20 +99,23 @@ function determineMessage(event){
         'Stop talking to me', 
     ];
     const SPENCER_MESSAGES = [
-        `Just doing your job`,
-        `Even you could have done that`,
-        `Thanks, I sacrificed many lives for it`,
-        `Thanks, but I prefer not to be noticed for my intellectual superiority`,
-        `Give me a pen and I'll give you my autograph`,
-        `Why`,
-        `:expressionless:`,
+        'Just doing your job',
+        'Even you could have done that',
+        'Thanks, I sacrificed many lives for it',
+        'Thanks, but I prefer not to be noticed for my intellectual superiority',
+        'Give me a pen and I\'ll give you my autograph',
+        'Why`,
+        ':expressionless:',
         ':fp:',
         'Did somebody forget to feed the',
         'Could someone please take care of',
         'Did you actually pay for that haircut',
         'I thought that the judge also said that you could not talk to me',
         'Did you dress in the dark today',
-        'Oh, are you still here',        
+        'Oh, are you still here',  
+        'You should have worn the brown pants today',
+        'Dude. Deodorant.',
+        'Anyone else smell that? Wait... it is just',
     ];
     const BYE_MESSAGES = [
         'Autobots! Roll out!',
@@ -129,24 +132,26 @@ function determineMessage(event){
         'Fare thee well',
         'Live long and prosper',
         'Bye Felicia, I mean',
+        'Job\'s done.',
+        
     ];
     const THANKS_MESSAGES = [
-        `You're welcome`,
+        'You\'re welcome',
         'No problem',
         'Much appreciated',
         `All in a day's work`,
         'I appreciate you,',
-        `No problemo,`,
-        `Happy to help,`,
-        `Easy peasy,`,
+        'No problemo,',
+        'Happy to help,',
+        'Easy peasy,',
         'Easy peasy lemon squeezy,',
-        `My pleasure,`,
+        'My pleasure,',
         'You got it,',
         'You got it, dude',
-        `Don't mention it,`,
-        `Not a problem`,
-        `It was nothing,`,
-        `I'm happy to help,`,
+        'Don\'t mention it,',
+        'Not a problem',
+        'It was nothing,',
+        'I\'m happy to help,',
         `Anytime`,
         `You got it,`,
         `Oh, anytime`,
@@ -167,16 +172,18 @@ function determineMessage(event){
     ];
 
     const DONUT_MESSAGES = [
-        `QT has great donuts`,
-        `Why not go to McDonalds for those donuts,`,
-        `I recommend finding donutless donuts,`,
+        'QT has great donuts',
+        'Why not go to McDonalds for those donuts,',
+        'I recommend finding donutless donuts,',
         'Donuts with sprinkles - hold the donut, sprinkles on the side,',
         'I also have a bag of just gluten, I can make some pretty decent keto doughnuts with it,',
         'I brought in some keto doughnuts, with extra gluten! Just for you,',
         'I bet you would love some Active donuts,',
         'Would you like a :fist: Hurtz Donut,',
-        'DONUT TELL ME WHAT TO DO'
-    ]
+        'DONUT TELL ME WHAT TO DO',
+        'click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g',
+        'My tummy feels funny.'
+    ];
       
     const BACON_MESSAGES = [
         'mmmm.... bacon!',
@@ -184,7 +191,7 @@ function determineMessage(event){
         ':bacon:',
         ':alert_bacon:',
         `IT'S BACON!!!`
-    ]
+    ];
     
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
