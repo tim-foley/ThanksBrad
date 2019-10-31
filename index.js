@@ -141,8 +141,16 @@ function determineMessage(event){
         'Live long and prosper',
         'Bye Felicia, I mean',
         `I'm out`,
-        'Live long and prosper',
-        `Job's done.`	
+        'Autobots! Roll out!',
+        'Freedom is the right of all sentient beings',
+        'Until I return I\'m leaving you in command. I know you won\’t let me down',
+        'This universe, no matter how vast will never be big enough for you and I to coexist',
+        'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
+        'It\’s been an honor serving with you',
+        `Job's done.`,
+	'May the Force be with you',
+	'May the hair on your toes never fall out!',
+	    
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -199,7 +207,8 @@ function determineMessage(event){
         'Did someone say bacon?',
         ':bacon:',
         ':alert_bacon:',
-        `IT'S BACON!!!`
+        `IT'S BACON!!!`,
+	'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
     ];
 	
     const BRAD_FACTS = [
@@ -215,7 +224,43 @@ function determineMessage(event){
 	'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
 	'Capybaras can stay underwater for up to five minutes at a time, according to the San Diego Zoo.',
 	`The scientific name for capybara comes from Hydro chaeris, which means 'water hog' in Greek.`,
-	`An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`
+	`An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`,
+        `A type of "immortal" jellyfish is capable of cheating death indefinitely.`,
+        'Octopuses have three hearts.',
+        'Butterflies can taste with their feet.',
+        'Cats and horses are highly susceptible to black widow venom, but dogs are relatively resistant. Sheep and rabbits are apparently immune.',
+        'Sharks kill fewer than 10 people per year. Humans kill about 100 million sharks per year.',
+        'Wild dolphins call each other by name.',
+        'Young goats pick up accents from each other.',
+        `Humpback whale songs spread like "cultural ripples from one population to another."`,
+	'Tardigrades are extremely durable microscopic animals that exist all over Earth. They can survive any of the following: 300 degrees Fahrenheit (149 Celsius), -458 degrees F (-272 C), the vacuum of space, pressure six times stronger than the ocean floor and more than a decade without food.',
+	'Horses use facial expressions to communicate with each other.',
+	`Elephants have a specific alarm call that means "human."`,
+	`Squirrels can't burp or vomit.`,
+	'Less time separates the existence of humans and the tyrannosaurus rex than the T-rex and the stegosaurus.',
+	`There's a place on Earth where seagulls prey on right whales.`,
+	`Owls don't have eyeballs. They have eye tubes.`,
+	'Animals with smaller bodies and faster metabolism see in slow motion.',
+	`Dogs' sense of smell is about 100,000 times stronger than humans', but they have just one-sixth our number of taste buds.`,
+	'The extinct colossus penguin stood as tall as LeBron James.',
+	`Male gentoo and Adelie penguins "propose" to females by giving them a pebble.`,
+	`Azara's owl monkeys are more monogamous than humans.`,
+	`Barn owls are normally monogamous, but about 25 percent of mated pairs "divorce."`,
+	'A group of parrots is known as a pandemonium.',
+	'Polar bears have black skin.',
+	'Reindeer eyeballs turn blue in winter to help them see at lower light levels.',
+	'A human brain operates on about 15 watts.',
+	'Warmer weather causes more turtles to be born female than male.',
+	'African buffalo herds display voting behavior, in which individuals register their travel preference by standing up, looking in one direction and then lying back down. Only adult females can vote.',
+	'If a honeybee keeps waggle dancing in favor of an unpopular nesting site, other workers headbutt her to help the colony reach a consensus.',
+	'Honeybees can flap their wings 200 times every second.',
+	'The claws of a mantis shrimp can accelerate as quickly as a .22-caliber bullet.',
+	'A single strand of spider silk is thinner than a human hair, but also five times stronger than steel of the same width. A rope just 2 inches thick could reportedly stop a Boeing 747.',
+	`A supercolony of invasive Argentine ants, known as the "California large," covers 560 miles of the U.S. West Coast. It's currently engaged in a turf war with a nearby supercolony in Mexico.`,
+	'The recently discovered bone-house wasp stuffs the walls of its nest with dead ants.',
+	'By eating pest insects, bats save the U.S. agriculture industry an estimated $3 billion per year.',
+	'Fourteen new species of dancing frogs were discovered in 2014, raising the global number of known dancing-frog species to 24.',
+	'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.'
     ];
     
     if (bradAbuseDetected(event.user)){
