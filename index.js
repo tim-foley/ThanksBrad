@@ -209,7 +209,7 @@ function determineMessage(event){
 	'The largest rodent on Earth is the Capybara.',
 	'Capybara are found throughout much of northern and central South America, though a small invasive population has been seen in Florida.',
 	`Like other rodents, capybaras’ teeth grow continuously, and they wear them down by grazing on aquatic plants, grasses, and other plentiful plants.`,
-	`Like Tim, capybaras eat their own feces in the morning. That’s when their poo is protein rich from the high number of microbes digesting the previous day’s meals. Because the grasses they eat are so hard to digest, eating their waste essentially allows them to digest it twice.`,
+	`Capybaras eat their own feces in the morning. That’s when their poo is protein rich from the high number of microbes digesting the previous day’s meals. Because the grasses they eat are so hard to digest, eating their waste essentially allows them to digest it twice.`,
 	'Capybara are closely related to guinea pigs and rock cavies, and more distantly related to chinchillas and agouti.',
 	`Capybara's pig-shaped bodies are adapted for life in bodies of water found in forests, seasonally flooded savannas, and wetlands.`,
 	'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
