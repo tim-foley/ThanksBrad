@@ -142,7 +142,10 @@ function determineMessage(event){
         'Bye Felicia, I mean',
         `I'm out`,
         'Live long and prosper',
-        `Job's done.`	
+        `Job's done.`,
+	'May the Force be with you ',
+	'Autobots!  Roll out!',
+	'I am Optimus Prime, leader of the autobots.'    
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -215,7 +218,8 @@ function determineMessage(event){
 	'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
 	'Capybaras can stay underwater for up to five minutes at a time, according to the San Diego Zoo.',
 	`The scientific name for capybara comes from Hydro chaeris, which means 'water hog' in Greek.`,
-	`An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`
+	`An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`,
+	'My favorite animal is the capybara'    
     ];
     
     if (bradAbuseDetected(event.user)){
