@@ -87,7 +87,9 @@ function determineMessage(event){
     ].find(phrase => eventText.indexOf(phrase) > -1);
     
     const IS_BYE_MESSAGE = [
-        'bye'
+        'bye',
+	'timetoleave',
+	'timetogo'	
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
     const IS_BRAD_FACT = [
@@ -96,6 +98,18 @@ function determineMessage(event){
 	'capybara'
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
+    const IS_BRAD_WRATH = [
+	'autobots',
+	'rollout!',
+	'optimus',
+	'prime',
+	'transformers',
+	'megatron',
+	'cybertron',
+	'allspark',
+	'decepticons'
+    ].find(phrase => eventText.indexOf(phrase) > -1);    
+	
     let listToUse;
     const BRAD_BOT_ABUSE  = [
         'Cool it now, I have other things to do besides receive your praise,',
@@ -105,6 +119,7 @@ function determineMessage(event){
         'Stop talking to me', 
 	'Seriously, stop talking'
     ];
+	
     const SPENCER_MESSAGES = [
         'Just doing your job',
         'Even you could have done that',
@@ -148,9 +163,7 @@ function determineMessage(event){
         'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
         'It\’s been an honor serving with you',
         `Job's done.`,
-	'May the Force be with you',
-	'May the hair on your toes never fall out!',
-	    
+	'May the Force be with you'	    
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -262,7 +275,23 @@ function determineMessage(event){
 	'Fourteen new species of dancing frogs were discovered in 2014, raising the global number of known dancing-frog species to 24.',
 	'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.'
     ];
-    
+    const BRAD_WRATH = [
+	'I hate you',
+	'Shut it',
+	'Shut your pie hole'
+	'You did NOT just say that',
+	`I can't believe you just said that`,
+	'Are you trying to annoy me',
+	'May your headphones snag on every door handle',
+	`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
+	'May you forever feel your cell phone vibrating in the pocket it is not even in',
+	'May the chocolate chips in your cookies always turn out to be raisins',
+	`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
+	'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was tjust the chair',
+	'May you never be quite certain as to whether that pressure is a fart or a poop',
+	'May the hair on your toes never fall out!'
+    ];
+	
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
@@ -286,6 +315,9 @@ function determineMessage(event){
     }
     else if (IS_BRAD_FACT) {
 	listToUse = BRAD_FACTS;
+    }
+    else if (IS_BRAD_WRATH) {
+	listToUse = BRAD_WRATH;
     }	
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
