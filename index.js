@@ -278,7 +278,7 @@ function determineMessage(event){
     const BRAD_WRATH = [
       'I hate you',
       'Shut it',
-      'Shut your pie hole'
+      'Shut your pie hole',
       'You did NOT just say that',
       `I can't believe you just said that`,
       'Are you trying to annoy me',
