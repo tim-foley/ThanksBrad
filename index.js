@@ -479,7 +479,7 @@ function determineMessage(event){
 	listToUse = TELL_JOKE;
     }
     else if (IS_WHOS_THERE) {
-	listToUSE (WHOS_THERE);
+	listToUse = WHOS_THERE;
     }	    
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
