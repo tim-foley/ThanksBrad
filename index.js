@@ -92,6 +92,11 @@ function determineMessage(event){
 		'timetogo'	
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
+    const IS_THAT_A_FACT = [
+	'isthatafact',
+	'isthattrue'    
+    ].find(phrase => eventText.indexOf(phrase) > -1);   
+    
     const IS_BRAD_FACT = [
 		'fact',
 		'faq',
@@ -290,7 +295,27 @@ function determineMessage(event){
       'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
       'May you never be quite certain as to whether that pressure is a fart or a poop'		
     ];
-	
+    const IS_THAT_A_FACT_MESSAGE = [
+	'Do you doubt me?',
+	'Google it.  I dare you.',
+	'Prove me wrong.',
+	'You dare question me?',
+	'Oh geez. A non-believer...',
+	`Of course it's true.`,
+	'Would I lie to you',
+	'Until you prove it otherwise',
+	'It must be, I saw it on the interwebs this morning.',
+	`Well, I'm not an expert on it, but I did stay at a Holiday Inn last night`,
+	'Yes',
+	'No',
+	'Maybe',
+	'Certainly',
+	'Without a doubt',
+	'Most likely',
+	'Signs point to yes',
+	'According to the prophesy, yes.',
+	'Are you calling me a liar?'  
+    ]	    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
@@ -313,11 +338,14 @@ function determineMessage(event){
         listToUse = BYE_MESSAGES;   
     }
     else if (IS_BRAD_FACT) {
-		listToUse = BRAD_FACTS;
+	listToUse = BRAD_FACTS;
     }
-	else if (IS_BRAD_WRATH) {
-		listToUse = BRAD_WRATH;
-	}	
+    else if (IS_BRAD_WRATH) {
+	listToUse = BRAD_WRATH;
+    }
+    else if (IS_THAT_A_FACT) {
+	listToUse = IS_THAT_A_FACT_MESSAGE;
+    }	    
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
