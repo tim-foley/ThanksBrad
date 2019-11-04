@@ -477,6 +477,7 @@ function determineMessage(event){
     }
     else if (IS_TELL_JOKE) {
 	listToUse = TELL_JOKE;
+    }
     else if (IS_WHOS_THERE) {
 	listToUSE (WHOS_THERE);
     }	    
