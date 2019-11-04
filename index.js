@@ -87,42 +87,56 @@ function determineMessage(event){
     ].find(phrase => eventText.indexOf(phrase) > -1);
     
     const IS_BYE_MESSAGE = [
-		'bye',
-		'timetoleave',
-		'timetogo'	
+	'bye',
+	'timetoleave',
+	'timetogo'	
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
     const IS_THAT_A_FACT = [
-	'isthatafact',
-	'isthattrue'    
+	'areyousure',
+	'isthattrue',
+	'idontbelieveyou'    
     ].find(phrase => eventText.indexOf(phrase) > -1);   
     
     const IS_BRAD_FACT = [
-		'fact',
-		'faq',
-		'capybara'
+	'fact',
+	'faq',
+	'capybara'
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
-	const IS_BRAD_WRATH = [
-		'autobots',
-		'rollout!',
-		'optimus',
-		'prime',
-		'transformers',
-		'megatron',
-		'cybertron',
-		'allspark',
-		'decepticons'
-	].find(phrase => eventText.indexOf(phrase) > -1);    
-	
+    const IS_BRAD_WRATH = [
+	'autobots',
+	'rollout!',
+	'optimus',
+	'prime',
+	'transformers',
+	'megatron',
+	'cybertron',
+	'allspark',
+	'decepticons',
+	'bumblebee'
+    ].find(phrase => eventText.indexOf(phrase) > -1);    
+    
+    const IS_TELL_JOKE = [
+	    'tellmeajoke',
+	    'knowanyjokes'
+    ].find(phrase => eventText.indexOf(phrase) > -1);    	    
+    const IS_WHOS_THERE = [
+	    'whosthere',
+	    'whoisthere',
+	    'whosethere',
+	    'whobethere'
+    ].find(phrase => eventText.indexOf(phrase) > -1);    	    
     let listToUse;
     const BRAD_BOT_ABUSE  = [
-		'Cool it now, I have other things to do besides receive your praise,',
-		'Ok, this has been fun, but you should probably get back to work now,',
-		'I heard you the first time, Jeeze!',
-		`Keep this up and you'll burn through my free Heroku plan!`,
-		'Stop talking to me', 
-		'Seriously, stop talking'
+	'Cool it now, I have other things to do besides receive your praise,',
+	'Ok, this has been fun, but you should probably get back to work now,',
+	'I heard you the first time, Jeeze!',
+	`Keep this up and you'll burn through my free Heroku plan!`,
+	'Stop talking to me', 
+	'Seriously, stop talking',
+	`Here are the latest rain forest test results: "You are a horrible person." That's what it says: a horrible person. We weren't even testing for that.`,
+	`Okay, look; we both said a lot of things you're going to regret, but I think we can put our difference behind us. For science. You monster.`
     ];
 	
     const SPENCER_MESSAGES = [
@@ -140,9 +154,9 @@ function determineMessage(event){
         'I thought that the judge also said that you could not talk to me',
         'Did you dress in the dark today',
         'Oh, are you still here', 
-		'You should have worn the brown pants today',
+	'You should have worn the brown pants today',
         'Dude. Deodorant.',
-        'Anyone else smell that? Wait... it is just'       
+        'Anyone else smell that? Wait... it is just'   
     ];
     const BYE_MESSAGES = [
         'Bye',
@@ -168,7 +182,7 @@ function determineMessage(event){
         'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
         `It’s been an honor serving with you`,
         `Job's done.`,
-		'May the Force be with you'	    
+	'May the Force be with you'	    
     ];
     const THANKS_MESSAGES = [
         `You're welcome`,
@@ -216,7 +230,7 @@ function determineMessage(event){
         'I bet you would love some Active donuts,',
         'Would you like a :fist: Hurtz Donut,',
         'DONUT TELL ME WHAT TO DO',
-		`click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g`,
+	`click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g`,
         'My tummy feels funny.'
     ];
       
@@ -226,7 +240,7 @@ function determineMessage(event){
         ':bacon:',
         ':alert_bacon:',
         `IT'S BACON!!!`,
-		'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
+	'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
     ];
 	
     const BRAD_FACTS = [
@@ -278,7 +292,8 @@ function determineMessage(event){
       'The recently discovered bone-house wasp stuffs the walls of its nest with dead ants.',
       'By eating pest insects, bats save the U.S. agriculture industry an estimated $3 billion per year.',
       'Fourteen new species of dancing frogs were discovered in 2014, raising the global number of known dancing-frog species to 24.',
-      'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.'
+      'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.',
+      'Humans can survive underwater. But not for very long.',
     ];
     const BRAD_WRATH = [
       'I hate you',
@@ -293,7 +308,9 @@ function determineMessage(event){
       'May the chocolate chips in your cookies always turn out to be raisins',
       `May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
       'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
-      'May you never be quite certain as to whether that pressure is a fart or a poop'		
+      'May you never be quite certain as to whether that pressure is a fart or a poop',
+      `It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
+      `I don't want to tell you you're business, but if I were you, I'd leave me alone.` 
     ];
     const IS_THAT_A_FACT_MESSAGE = [
 	'Do you doubt me?',
@@ -315,6 +332,118 @@ function determineMessage(event){
 	'Signs point to yes',
 	'According to the prophesy, yes.',
 	'Are you calling me a liar?'  
+    ]
+    const TELL_JOKE = [
+	'Ok, knock-knock',
+	'Look in the mirror',
+	'7 percent of all statistics are made up on the spot.',
+	'A clear conscience is usually the sign of a bad memory.',
+	'A conclusion is the place where you got tired of thinking.',
+	'A conscience is what hurts when all your other parts feel so good.',
+	`A cop stopped me for speeding. He said, “Why were you going so fast?” I said, “See this thing my foot is on? It’s called an accelerator. When you push down on it, it sends more gas to the engine. The whole car just takes right off. And see this thing? This steers it.”`,
+	`A friend of mine once sent me a post card with a picture of the entire planet Earth taken from space. On the back it said, “Wish you were here.”`,
+	`A lot of people are afraid of heights. Not me, I’m afraid of widths.`,
+	'All those who believe in psychokinesis raise my hand.',
+	'Ambition is a poor excuse for not having enough sense to be lazy.',
+	'Bills travel through the mail at twice the speed of checks.',
+	`Borrow money from pessimists-they don’t expect it back.`,
+	'Change is inevitable….except from vending machines.',
+	'Cross country skiing is great if you live in a small country.',
+	'Dancing is a perpendicular expression of a horizontal desire.',
+	`Doing a little work around the house. I put fake brick wallpaper over a real brick wall, just so I’d be the only one who knew. People come over and I’m gonna say, “Go ahead, touch it…it feels real.”`,
+	`Drugs may lead to nowhere, but at least it’s the scenic route.`,
+	`Eagles may soar, but weasels don’t get sucked into jet engines.`,
+	`Everyone has a photographic memory. Some just don’t have film.`,
+	`Experience is something you don’t get until just after you need it.`,
+	'For every action, there is an equal and opposite criticism.',
+	'Half the people you know are below average.',
+	'Hard work pays off in the future. Laziness pays off now.',
+	`How do you tell when you’re out of invisible ink?`,
+	'I almost had a psychic girlfriend but she left me before we met.',
+	`I bought a house, on a one-way dead-end road. I don’t know how I got there.`,
+	'I bought a million lottery tickets. I won a dollar.',
+	`I bought some powdered water, but I don’t know what to add to it.`,
+	`I can remember the first time I had to go to sleep. Mom said, “Brad, time to go to sleep.” I said, “But I don’t know how.” She said, “It’s real easy. Just go down to the end of tired and hang a left.” So I went down to the end of tired, and just out of curiosity I hung a right. My mother was there, and she said “I thought I told you to go to sleep.”`,
+	`I couldn’t repair your brakes, so I made your horn louder.`,
+	'I eat swiss cheese from the inside out.',
+	'I had amnesia once or twice.',
+	`I hate it when my foot falls asleep during the day because that means it’s going to be up all night.`,
+	`I have an answering machine in my car. It says, “I’m home now. But leave a message and I’ll call when I’m out.”`,
+	'I intend to live forever – so far, so good.',
+	`I love to go shopping. I love to freak out salespeople. They ask me if they can help me, and I say, “Have you got anything I’d like?” Then they ask me what size I need, and I say, “Extra medium.”`,
+	`I planted some bird seed. A bird came up. Now I don’t know what to feed it.`,
+	`I saw a bank that said “24 Hour Banking”, but I don’t have that much time.`,
+	`I saw a sign: “Rest Area 25 Miles”. That’s pretty big. Some people must be really tired.`,
+	`I saw a small bottle of cologne and asked if it was for sale. She said, “It’s free with purchase.” I asked her if anyone bought anything today.`,
+	`I spilled spot remover on my dog. He’s gone now.`,
+	'I took a course in speed waiting. Now I can wait an hour in only ten minutes.',
+	'I used to have an open mind but my brains kept falling out.',
+	`I used to work in a fire hydrant factory. You couldn’t park anywhere near the place.`,
+	`I was going 70 miles an hour and got stopped by a cop who said, “Do you know the speed limit is 55 miles per hour?” “Yes, officer, but I wasn’t going to be out that long…”`,
+	`I was in a job interview and I opened a book and started reading. Then I said to the guy, “Let me ask you a question. If you are in a spaceship that is traveling at the speed of light, and you turn on the headlights, does anything happen?” He said, “I don’t know.” I said, “I don’t want your job.”`,
+	`I was sad because I had no shoes, until I met a man who had no feet. So I said, “Got any shoes you’re not using?”`,
+	'I was trying to daydream, but my mind kept wandering.',
+	`I went down the street to the 24-hour grocery. When I got there, the guy was locking the front door. I said, “Hey, the sign says you’re open 24 hours.” He said, “Yes, but not in a row.”`,
+	`I went into this bar and sat down next to a pretty girl. She looked at me and said, “Hey, you have two different colored socks on.” I said, “Yeah, I know, but to me they’re the same because I go by thickness.”`,
+	`I went to a 7-11 and asked for a 2×4 and a box of 3×5’s. The clerk said, “ten-four.”`,
+	`I went to a fancy french restaurant called “Deja Vu.” The headwaiter said, “Don’t I know you?”`,
+	`I went to a general store. They wouldn’t let me buy anything specifically.`,
+	`I went to a restaurant that serves “breakfast at any time”. So I ordered French Toast during the Renaissance.`,
+	`I went to the bank and asked to borrow a cup of money. They said, “What for?” I said, “I’m going to buy some sugar.”`,
+	`I went to the hardware store and bought some used paint. It was in the shape of a house. I also bought some batteries, but they weren’t included.`,
+	'I went to the museum where they had all the heads and arms from the statues that are in all the other museums.',
+	'I woke up one morning, and all of my stuff had been stolen and replaced by exact duplicates.',
+	`I worked in a health food store once. A guy came in and asked me, “If I melt dry ice, can I take a bath without getting wet?”`,
+	`I wrote a song, but I can’t read music so I don’t know what it is. Every once in a while I’ll be listening to the radio and I say, “I think I might have written that.”`,
+	`I’d kill for a Nobel Peace Prize.`,
+	`If at first you don’t succeed, then skydiving definitely isn’t for you.`,
+	'If Barbie is so popular, why do you have to buy her friends?',
+	'If everything seems to be going well, you have obviously overlooked something.',
+	'If you can wave a fan, and you can wave a club, can you wave a fan club?',
+	`If you must choose between two evils, pick the one you’ve never tried before.`,
+	'If you think nobody cares about you, try missing a couple of payments.',
+	'If you were going to shoot a mime, would you use a silencer?',
+	`If you write the word “monkey” a million times, do you start to think you’re Shakespeare?`,
+	`If you’re not part of the solution, you’re part of the precipitate.`,
+	'In my house on the ceilings I have paintings of the rooms above…so I never have to go upstairs.',
+	'In school, every period ends with a bell. Every sentence ends with a period. Every crime ends with a sentence.',
+	`It’s a small world, but I wouldn’t want to have to paint it.`,
+	'Join the Army, meet interesting people, kill them.',
+	'Many people quit looking for work when they find a job.',
+	'Monday is an awful way to spend 1/7th of your life.',
+	'My socks DO match. They’re the same thickness.',
+	'My theory of evolution is that Darwin was adopted.',
+	`Officer, I know I was going faster than 55MPH, but I wasn’t going to be on the road an hour.`,
+	`OK, so what’s the speed of dark?`,
+	'On the other hand, you have different fingers.',
+	`One night I walked home very late and fell asleep in somebody’s satellite dish. My dreams were showing up on TV’s all over the world.`,
+	`One time a cop pulled me over for running a stop sign. He said, “Didn’t you see the stop sign?” I said, “Yeah, but I don’t believe everything I read.”`,
+	'Plan to be spontaneous tomorrow.',
+	`Right now I’m having amnesia and deja vu at the same time.`,
+	'Smoking cures weight problems…eventually.',
+	`Someone sent me a postcard picture of the earth. On the back it said, “Wish you were here.”`,
+	'Sponges grow in the ocean. That just kills me. I wonder how much deeper the ocean would be if that didn’t happen.',
+	`Support bacteria – they’re the only culture some people have.`,
+	'The early bird gets the worm, but the second mouse gets the cheese.',
+	'The hardness of the butter is proportional to the softness of the bread.',
+	`The judge asked, “What do you plead?” I said, “Insanity, your honor, who in their right mind would park in the passing lane?”`,
+	'The problem with the gene pool is that there is no lifeguard.',
+	'The severity of the itch is proportional to the reach.',
+	`The sooner you fall behind, the more time you’ll have to catch up.`,
+	'To steal ideas from one person is plagiarism; to steal from many is research.',
+	`Today I dialed a wrong number… The other person said, “Hello?” and I said, “Hello, could I speak to Joey?”… They said, “Uh… I don’t think so…he’s only 2 months old.” I said, “I’ll wait.”`,
+	'What a nice night for an evening.',
+	'What happens if you get scared half to death twice?',
+	`What’s another word for Thesaurus?`,
+	`When everything is coming your way, you’re in the wrong lane.`,
+	'Do you want to know how keep a moron in suspense?"    
+
+    ]
+    const WHOS_THERE = [
+	'Seriously, you thought I was going to tell a knock knock joke?'
+	`Shouldn't you be working?`
+	'You must really be desperate for something to do if you expect me to keep you entertained.',
+	`"kNoCk KnOcK!" Durr!`    
     ]	    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
@@ -345,6 +474,11 @@ function determineMessage(event){
     }
     else if (IS_THAT_A_FACT) {
 	listToUse = IS_THAT_A_FACT_MESSAGE;
+    }
+    else if (IS_TELL_JOKE) {
+	listToUse = TELL_JOKE;
+    else if (IS_WHOS_THERE) {
+	listToUSE (WHOS_THERE);
     }	    
 
     return listToUse[Math.floor(Math.random() * listToUse.length)];
