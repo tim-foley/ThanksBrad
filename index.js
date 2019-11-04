@@ -440,8 +440,8 @@ function determineMessage(event){
 
     ]
     const WHOS_THERE = [
-	'Seriously, you thought I was going to tell a knock knock joke?'
-	`Shouldn't you be working?`
+	'Seriously, you thought I was going to tell a knock knock joke?',
+	`Shouldn't you be working?`,
 	'You must really be desperate for something to do if you expect me to keep you entertained.',
 	`"kNoCk KnOcK!" Durr!`    
     ]	    
