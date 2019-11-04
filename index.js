@@ -436,7 +436,7 @@ function determineMessage(event){
 	'What happens if you get scared half to death twice?',
 	`What’s another word for Thesaurus?`,
 	`When everything is coming your way, you’re in the wrong lane.`,
-	'Do you want to know how keep a moron in suspense?"    
+	'Do you want to know how keep a moron in suspense?'   
 
     ]
     const WHOS_THERE = [
