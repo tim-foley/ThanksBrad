@@ -348,20 +348,20 @@ function determineMessage(event){
 	'Are you calling me a liar?'  
     ]
 	const PET_PEVES_LIST = [
-	'My pet peeve is people who clip their nails at work.',
-	'My pet peeve is people who chew loudly.',
-	'My pet peeve is people doing burpies by me'.,	
+	'My pet peeve is people who clip their nails at work',
+	'My pet peeve is people who chew loudly',
+	'My pet peeve is people doing burpies by me',	
 	'My pet peeve is people who pull in front of me only to slow down and turn - when they could have pulled in behind me!',
-	`My pet peeve is people who don't use their turn signal,`,
+	`My pet peeve is people who don't use their turn signal`,
 	`My pet peeve is people who start sentences with 'So...'`,
 	`My pet peeve is people who talk loudly. I'm looking at you @cjweipert!`,
-	'My pet peeve is poeple whose desks are filled with video game characters.',
-	'People who walk slowly or stop suddenly in the middle of the sidewalk.',
-	'People who block the aisle at the grocery store.',
+	'My pet peeve is poeple whose desks are filled with video game characters',
+	'People who walk slowly or stop suddenly in the middle of the sidewalk',
+	'People who block the aisle at the grocery store',
 	'People who open the clear glass doors at the grocery store to see what is in the freezer!',
-	'Being called Brian.',
-	'My pet peve is being inturrupted when having a conversation with someone.',
-	'My pet peeve is when people invite themselves in to a conversation I am having with someone else.'	
+	'Being called Brian',
+	'My pet peve is being inturrupted when having a conversation with someone',
+	'My pet peeve is when people invite themselves in to a conversation I am having with someone else'	
 	]
     const TELL_JOKE = [
 	'Ok, knock-knock',
