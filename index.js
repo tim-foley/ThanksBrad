@@ -98,6 +98,10 @@ function determineMessage(event){
 	'idontbelieveyou'    
     ].find(phrase => eventText.indexOf(phrase) > -1);   
     
+	const IS_CAPYBARA_FACT = [
+	 'capybara'
+	].find(phrase => eventText.indexOf(phrase) > -1);   
+	
     const IS_BRAD_FACT = [
 	'fact',
 	'faq',
@@ -117,10 +121,18 @@ function determineMessage(event){
 	'bumblebee'
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
+	const ARE_PET_PEEVES = [
+		'peeve',
+		'annoys',
+		'bothers'		
+	]
+	
     const IS_TELL_JOKE = [
 	    'tellmeajoke',
+		'knockknock',
 	    'knowanyjokes'
-    ].find(phrase => eventText.indexOf(phrase) > -1);    	    
+    ].find(phrase => eventText.indexOf(phrase) > -1);  
+	
     const IS_WHOS_THERE = [
 	    'whosthere',
 	    'whoisthere',
@@ -233,7 +245,7 @@ function determineMessage(event){
 	`click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g`,
         'My tummy feels funny.'
     ];
-      
+    
     const BACON_MESSAGES = [
         'mmmm.... bacon!',
         'Did someone say bacon?',
@@ -242,9 +254,8 @@ function determineMessage(event){
         `IT'S BACON!!!`,
 	'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
     ];
-	
-    const BRAD_FACTS = [
-      'Like beavers, capybaras are strong swimmers.',
+	const CAPYBARA_FACTS = [
+	 'Like beavers, capybaras are strong swimmers.',
       'Capybara toes are partially webbed.',
       'Capybara fur is reddish to dark brown and is long and brittle.',
       'The largest rodent on Earth is the Capybara.',
@@ -256,7 +267,10 @@ function determineMessage(event){
       'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
       'Capybaras can stay underwater for up to five minutes at a time, according to the San Diego Zoo.',
       `The scientific name for capybara comes from Hydro chaeris, which means 'water hog' in Greek.`,
-      `An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`,
+      `An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`
+	];
+	
+    const BRAD_FACTS = [
       `A type of 'immortal' jellyfish is capable of cheating death indefinitely.`,
       'Octopuses have three hearts.',
       'Butterflies can taste with their feet.',
@@ -333,6 +347,22 @@ function determineMessage(event){
 	'According to the prophesy, yes.',
 	'Are you calling me a liar?'  
     ]
+	const PET_PEVES_LIST = [
+	'My pet peeve is people who clip their nails at work.',
+	'My pet peeve is people who chew loudly.',
+	'My pet peeve is people doing burpies by me'.,	
+	'My pet peeve is people who pull in front of me only to slow down and turn - when they could have pulled in behind me!',
+	`My pet peeve is people who don't use their turn signal,`,
+	`My pet peeve is people who start sentences with 'So...'`,
+	`My pet peeve is people who talk loudly. I'm looking at you @cjweipert!`,
+	'My pet peeve is poeple whose desks are filled with video game characters.',
+	'People who walk slowly or stop suddenly in the middle of the sidewalk.',
+	'People who block the aisle at the grocery store.',
+	'People who open the clear glass doors at the grocery store to see what is in the freezer!',
+	'Being called Brian.',
+	'My pet peve is being inturrupted when having a conversation with someone.',
+	'My pet peeve is when people invite themselves in to a conversation I am having with someone else.'	
+	]
     const TELL_JOKE = [
 	'Ok, knock-knock',
 	'Look in the mirror',
@@ -474,10 +504,16 @@ function determineMessage(event){
     }
     else if (IS_THAT_A_FACT) {
 	listToUse = IS_THAT_A_FACT_MESSAGE;
-    }
+    } 
+	else if (IS_CAPYBARA_FACT) {
+	listToUse = CAPYBARA_FACTS;	
+	}	
     else if (IS_TELL_JOKE) {
 	listToUse = TELL_JOKE;
     }
+	else if (ARE_PET_PEEVES) {
+	listToUse = PET_PEVES_LIST	
+	}	
     else if (IS_WHOS_THERE) {
 	listToUse = WHOS_THERE;
     }	    
