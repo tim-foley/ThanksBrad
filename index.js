@@ -346,13 +346,13 @@ function determineMessage(event){
 	'Signs point to yes',
 	'According to the prophesy, yes.',
 	'Are you calling me a liar?'  
-    ]
+    ];
 	const PET_PEVES_LIST = [
 	'My pet peeve is people who clip their nails at work.',
 	'My pet peeve is people who chew loudly.',
 	'My pet peeve is people doing burpies by me'.,	
 	'My pet peeve is people who pull in front of me only to slow down and turn - when they could have pulled in behind me!',
-	`My pet peeve is people who don't use their turn signal,`,
+	`My pet peeve is people who don't use their turn signal`,
 	`My pet peeve is people who start sentences with 'So...'`,
 	`My pet peeve is people who talk loudly. I'm looking at you @cjweipert!`,
 	'My pet peeve is poeple whose desks are filled with video game characters.',
@@ -362,7 +362,7 @@ function determineMessage(event){
 	'Being called Brian.',
 	'My pet peve is being inturrupted when having a conversation with someone.',
 	'My pet peeve is when people invite themselves in to a conversation I am having with someone else.'	
-	]
+	];
     const TELL_JOKE = [
 	'Ok, knock-knock',
 	'Look in the mirror',
@@ -466,19 +466,17 @@ function determineMessage(event){
 	'What happens if you get scared half to death twice?',
 	`What’s another word for Thesaurus?`,
 	`When everything is coming your way, you’re in the wrong lane.`,
-	'Do you want to know how keep a moron in suspense?'    
-
-    ]
+	'Do you want to know how keep a moron in suspense?'
+    ];
     const WHOS_THERE = [
 	'Seriously, you thought I was going to tell a knock knock joke?',
 	`Shouldn't you be working?`,
 	'You must really be desperate for something to do if you expect me to keep you entertained.',
 	`"kNoCk KnOcK!" Durr!`    
-    ]	    
+    ];	    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
-
     else if (IS_THANKS_MESSAGE){
         if (event.user.indexOf('U2TV91VSA') > -1){
             listToUse = SPENCER_MESSAGES;
@@ -512,7 +510,7 @@ function determineMessage(event){
 	listToUse = TELL_JOKE;
     }
 	else if (ARE_PET_PEEVES) {
-	listToUse = PET_PEVES_LIST	
+	listToUse = PET_PEVES_LIST;	
 	}	
     else if (IS_WHOS_THERE) {
 	listToUse = WHOS_THERE;
