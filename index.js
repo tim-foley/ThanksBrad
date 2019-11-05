@@ -125,7 +125,7 @@ function determineMessage(event){
 		'peeve',
 		'annoys',
 		'bothers'		
-	]
+	].find(phrase => eventText.indexOf(phrase) > -1);    
 	
     const IS_TELL_JOKE = [
 	    'tellmeajoke',
@@ -355,12 +355,12 @@ function determineMessage(event){
 	`My pet peeve is people who don't use their turn signal`,
 	`My pet peeve is people who start sentences with 'So...'`,
 	`My pet peeve is people who talk loudly. I'm looking at you @cjweipert!`,
-	'My pet peeve is poeple whose desks are filled with video game characters',
+	'My pet peeve is people whose desks are filled with video game characters',
 	'People who walk slowly or stop suddenly in the middle of the sidewalk',
 	'People who block the aisle at the grocery store',
 	'People who open the clear glass doors at the grocery store to see what is in the freezer!',
 	'Being called Brian',
-	'My pet peve is being inturrupted when having a conversation with someone',
+	'My pet pevee is being inturrupted when having a conversation with someone',
 	'My pet peeve is when people invite themselves in to a conversation I am having with someone else'	
 	]
     const TELL_JOKE = [
