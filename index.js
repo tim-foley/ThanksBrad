@@ -360,8 +360,9 @@ function determineMessage(event){
 	'People who block the aisle at the grocery store',
 	'People who open the clear glass doors at the grocery store to see what is in the freezer!',
 	'Being called Brian',
-	'My pet pevee is being inturrupted when having a conversation with someone',
-	'My pet peeve is when people invite themselves in to a conversation I am having with someone else'	
+	'My pet peeve is being interrupted when having a conversation with someone',
+	'My pet peeve is when people invite themselves in to a conversation I am having with someone else',	
+	'My pet peeve is when whoever creates these responses sullies my name by leaving a typo in there.'
 	]
     const TELL_JOKE = [
 	'Ok, knock-knock',
