@@ -25,8 +25,6 @@ app.post('/', function (req, res) {
   }
   const event = body ? body.event : null;
   let tim = timOnEachTeam[event.team];
-  console.log('TIM', tim);
-  console.log('text', event.text)
     
   if (typeof event.text === 'string' && event.text.indexOf(tim) > -1) {
     messageAsTim(body.token, event, (err, result) => {
