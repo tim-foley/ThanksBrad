@@ -103,9 +103,8 @@ function determineMessage(event){
 	
     const IS_BRAD_FACT = [
 	'fact',
-	'faq',
-	'capybara'
-    ].find(phrase => eventText.indexOf(phrase) > -1);    
+	'faq'
+	].find(phrase => eventText.indexOf(phrase) > -1);    
     
     const IS_BRAD_WRATH = [
 	'autobots',
@@ -137,7 +136,15 @@ function determineMessage(event){
 	    'whoisthere',
 	    'whosethere',
 	    'whobethere'
-    ].find(phrase => eventText.indexOf(phrase) > -1);    	    
+    ].find(phrase => eventText.indexOf(phrase) > -1); 
+	
+	const IS_TRUTH = [
+	    'truths',
+	    'wisdom',
+	    'sayings',
+	    'potato'
+    ].find(phrase => eventText.indexOf(phrase) > -1); 
+	
     let listToUse;
     const BRAD_BOT_ABUSE  = [
 	'Cool it now, I have other things to do besides receive your praise,',
@@ -165,9 +172,24 @@ function determineMessage(event){
         'I thought that the judge also said that you could not talk to me',
         'Did you dress in the dark today',
         'Oh, are you still here', 
-	'You should have worn the brown pants today',
+		'You should have worn the brown pants today',
         'Dude. Deodorant.',
-        'Anyone else smell that? Wait... it is just'   
+        'Anyone else smell that? Wait... it is just',
+		'I hate you',
+		'Shut it',
+		'Shut your pie hole',
+		'You did NOT just say that',
+		`I can't believe you just said that`,
+		'Are you trying to annoy me',
+		'May your headphones snag on every door handle',
+		`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
+		'May you forever feel your cell phone vibrating in the pocket it is not even in',
+		'May the chocolate chips in your cookies always turn out to be raisins',
+		`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
+		'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
+		'May you never be quite certain as to whether that pressure is a fart or a poop',
+		`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
+		`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
     ];
     const BYE_MESSAGES = [
         'Bye',
@@ -186,12 +208,7 @@ function determineMessage(event){
         'Live long and prosper',
         'Bye Felicia, I mean',
         `I'm out`,
-        'Autobots! Roll out!',
-        'Freedom is the right of all sentient beings',
-        `Until I return I'm leaving you in command. I know you won’t let me down`,
-        'This universe, no matter how vast will never be big enough for you and I to coexist',
-        'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
-        `It’s been an honor serving with you`,
+
         `Job's done.`,
 	'May the Force be with you'	    
     ];
@@ -245,6 +262,55 @@ function determineMessage(event){
         'My tummy feels funny.'
     ];
     
+	const TRUTH_MESSAGES = [
+		`You're the only one holding yourself back`,
+		'The world owes you absolutely nothing',
+		`Investing in yourself isn't selfish`,
+		`What other people think of you really doesn't matter`,
+		`You don't have to please everyone`,
+		`Comparing your Chapter 1 with someone else's Chapter 9 is pure stupidity`,
+		`There's another way.  There always is `,
+		'A negative opinion always hits harder than a positive one',
+		'Your ideas are useless if not implemented',
+		`It's not what you say, It's what they hear`,
+		`Good enough isn't good enough if it can be better`,
+		`Try a little harder.  You'll be glad you did`,
+		'Failure is a chance to restart',
+		`Most of the time the people who talk about how hard they work don't actually work that hard`,
+		`Just because you're busy doesn't mean you're accomplishing something`,
+		'The world is full of idiots who think they are geniuses',
+		`You're unique.  Just like everyone else`,
+		`You're ridiculously average, at best`,
+		'You know a lot less than what you think you do',
+		'You cannot control lige, but you can change the way you see life',
+		'Life will not be perfect',
+		`Most of us don't know how to say 'No'`,
+		'People will hate you for no reason',
+		'Nobody is actually too busy to respond to you',
+		`People won't always be nice to you`,
+		'Your friends will talk behind your back at times',
+		'People will use you',
+		'We always tend to find a person to blame no matter what',
+		`The life you're living right now is a dream for many people`,
+		'Money can buy happiness',
+		'Some people are just not meant to stay in your life, no matter how bad you want them to',
+		`You'll find many people together, but not in love.  You'll find many people in love, but not together`,
+		'Life of other will continue without you',
+		'Life is a solo trip with lots of visitors',
+		'Nobody really cares about how difficult your life is',
+		'Your actions define you, not your thoughts',
+		'We spend time worrying about the losses and not about the gains we have',
+		'Almost no one practices what they preach',
+		`You don't have to wait for an apology to forgive`,
+		'One day everything will end',
+		`Following rules doesn't always guarantee success`,
+		'People ruin the happiness of other just becaus ehty cannnot find their own',
+		'You rarely get a second chance',
+		'You usually have to options. To stay or to dare',
+		`Everyone's biased towards someone or something`,
+		'People will always judge you'	
+	]
+	
     const BACON_MESSAGES = [
         'mmmm.... bacon!',
         'Did someone say bacon?',
@@ -309,21 +375,12 @@ function determineMessage(event){
       'Humans can survive underwater. But not for very long.',
     ];
     const BRAD_WRATH = [
-      'I hate you',
-      'Shut it',
-      'Shut your pie hole',
-      'You did NOT just say that',
-      `I can't believe you just said that`,
-      'Are you trying to annoy me',
-      'May your headphones snag on every door handle',
-      `May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
-      'May you forever feel your cell phone vibrating in the pocket it is not even in',
-      'May the chocolate chips in your cookies always turn out to be raisins',
-      `May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
-      'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
-      'May you never be quite certain as to whether that pressure is a fart or a poop',
-      `It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
-      `I don't want to tell you you're business, but if I were you, I'd leave me alone.` 
+        'Autobots! Roll out!',
+        'Freedom is the right of all sentient beings',
+        `Until I return I'm leaving you in command. I know you won’t let me down`,
+        'This universe, no matter how vast will never be big enough for you and I to coexist',
+        'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
+        `It’s been an honor serving with you`,
     ];
     const IS_THAT_A_FACT_MESSAGE = [
 	'Do you doubt me?',
@@ -480,7 +537,7 @@ function determineMessage(event){
     }
 
     else if (IS_THANKS_MESSAGE){
-        if (event.user.indexOf('U2TV91VSA') > -1){
+        if ((event.user.indexOf('UGACR0GE4') > -1) || (event.user.indexOf('U9Z6ZMZPT') > -1)){
             listToUse = SPENCER_MESSAGES;
         }
         else{
@@ -517,7 +574,9 @@ function determineMessage(event){
     else if (IS_WHOS_THERE) {
 	listToUse = WHOS_THERE;
     }	    
-
+	else if (IS_TRUTH) {
+	listToUse = TRUTH_MESSAGES;
+	}	
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
 
@@ -528,5 +587,3 @@ function bradAbuseDetected(user){
     }
     return false;
 }
-
-app.listen(process.env.PORT || 4747, () => console.log('Server is live and good'));
