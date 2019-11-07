@@ -585,3 +585,5 @@ function bradAbuseDetected(user){
     }
     return false;
 }
+
+app.listen(process.env.PORT || 4747, () => console.log('Server is live and good'));
