@@ -119,30 +119,30 @@ function determineMessage(event){
 	'bumblebee'
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
-	const ARE_PET_PEEVES = [
-		'peeve',
-		'annoys',
-		'bothers'		
-	].find(phrase => eventText.indexOf(phrase) > -1);    
+    const ARE_PET_PEEVES = [
+	'peeve',
+	'annoys',
+	'bothers'		
+    ].find(phrase => eventText.indexOf(phrase) > -1);    
 	
     const IS_TELL_JOKE = [
-	    'tellmeajoke',
-		'knockknock',
-	    'knowanyjokes'
+	'tellmeajoke',
+	'knockknock',
+	'knowanyjokes'
     ].find(phrase => eventText.indexOf(phrase) > -1);  
 	
     const IS_WHOS_THERE = [
-	    'whosthere',
-	    'whoisthere',
-	    'whosethere',
-	    'whobethere'
+	'whosthere',
+	'whoisthere',
+	'whosethere',
+	'whobethere'
     ].find(phrase => eventText.indexOf(phrase) > -1); 
 	
-	const IS_TRUTH = [
-	    'truths',
-	    'wisdom',
-	    'sayings',
-	    'potato'
+    const IS_TRUTH = [
+    	'truths',
+	'wisdom',
+	'sayings',
+	'potato'
     ].find(phrase => eventText.indexOf(phrase) > -1); 
 	
     let listToUse;
@@ -172,25 +172,26 @@ function determineMessage(event){
         'I thought that the judge also said that you could not talk to me',
         'Did you dress in the dark today',
         'Oh, are you still here', 
-		'You should have worn the brown pants today',
+	'You should have worn the brown pants today',
         'Dude. Deodorant.',
         'Anyone else smell that? Wait... it is just',
-		'I hate you',
-		'Shut it',
-		'Shut your pie hole',
-		'You did NOT just say that',
-		`I can't believe you just said that`,
-		'Are you trying to annoy me',
-		'May your headphones snag on every door handle',
-		`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
-		'May you forever feel your cell phone vibrating in the pocket it is not even in',
-		'May the chocolate chips in your cookies always turn out to be raisins',
-		`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
-		'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
-		'May you never be quite certain as to whether that pressure is a fart or a poop',
-		`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
-		`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
+	'I hate you',
+	'Shut it',
+	'Shut your pie hole',
+	'You did NOT just say that',
+	`I can't believe you just said that`,
+	'Are you trying to annoy me',
+	'May your headphones snag on every door handle',
+	`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
+	'May you forever feel your cell phone vibrating in the pocket it is not even in',
+	'May the chocolate chips in your cookies always turn out to be raisins',
+	`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
+	'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
+	'May you never be quite certain as to whether that pressure is a fart or a poop',
+	`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
+	`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
     ];
+
     const BYE_MESSAGES = [
         'Bye',
         'Laters',
@@ -208,7 +209,6 @@ function determineMessage(event){
         'Live long and prosper',
         'Bye Felicia, I mean',
         `I'm out`,
-
         `Job's done.`,
 	'May the Force be with you'	    
     ];
@@ -262,54 +262,54 @@ function determineMessage(event){
         'My tummy feels funny.'
     ];
     
-	const TRUTH_MESSAGES = [
-		`You're the only one holding yourself back`,
-		'The world owes you absolutely nothing',
-		`Investing in yourself isn't selfish`,
-		`What other people think of you really doesn't matter`,
-		`You don't have to please everyone`,
-		`Comparing your Chapter 1 with someone else's Chapter 9 is pure stupidity`,
-		`There's another way.  There always is `,
-		'A negative opinion always hits harder than a positive one',
-		'Your ideas are useless if not implemented',
-		`It's not what you say, It's what they hear`,
-		`Good enough isn't good enough if it can be better`,
-		`Try a little harder.  You'll be glad you did`,
-		'Failure is a chance to restart',
-		`Most of the time the people who talk about how hard they work don't actually work that hard`,
-		`Just because you're busy doesn't mean you're accomplishing something`,
-		'The world is full of idiots who think they are geniuses',
-		`You're unique.  Just like everyone else`,
-		`You're ridiculously average, at best`,
-		'You know a lot less than what you think you do',
-		'You cannot control lige, but you can change the way you see life',
-		'Life will not be perfect',
-		`Most of us don't know how to say 'No'`,
-		'People will hate you for no reason',
-		'Nobody is actually too busy to respond to you',
-		`People won't always be nice to you`,
-		'Your friends will talk behind your back at times',
-		'People will use you',
-		'We always tend to find a person to blame no matter what',
-		`The life you're living right now is a dream for many people`,
-		'Money can buy happiness',
-		'Some people are just not meant to stay in your life, no matter how bad you want them to',
-		`You'll find many people together, but not in love.  You'll find many people in love, but not together`,
-		'Life of other will continue without you',
-		'Life is a solo trip with lots of visitors',
-		'Nobody really cares about how difficult your life is',
-		'Your actions define you, not your thoughts',
-		'We spend time worrying about the losses and not about the gains we have',
-		'Almost no one practices what they preach',
-		`You don't have to wait for an apology to forgive`,
-		'One day everything will end',
-		`Following rules doesn't always guarantee success`,
-		'People ruin the happiness of other just becaus they cannnot find their own',
-		'You rarely get a second chance',
-		'You usually have to options. To stay or to dare',
-		`Everyone's biased towards someone or something`,
-		'People will always judge you'	
-	]
+    const TRUTH_MESSAGES = [
+	`You're the only one holding yourself back`,
+	'The world owes you absolutely nothing',
+	`Investing in yourself isn't selfish`,
+	`What other people think of you really doesn't matter`,
+	`You don't have to please everyone`,
+	`Comparing your Chapter 1 with someone else's Chapter 9 is pure stupidity`,
+	`There's another way.  There always is`,
+	'A negative opinion always hits harder than a positive one',
+	'Your ideas are useless if not implemented',
+	`It's not what you say, It's what they hear`,
+	`Good enough isn't good enough if it can be better`,
+	`Try a little harder.  You'll be glad you did`,
+	'Failure is a chance to restart',
+	`Most of the time the people who talk about how hard they work don't actually work that hard`,
+	`Just because you're busy doesn't mean you're accomplishing something`,
+	'The world is full of idiots who think they are geniuses',
+	`You're unique.  Just like everyone else`,
+	`You're ridiculously average, at best`,
+	'You know a lot less than what you think you do',
+	'You cannot control lige, but you can change the way you see life',
+	'Life will not be perfect',
+	`Most of us don't know how to say 'No'`,
+	'People will hate you for no reason',
+	'Nobody is actually too busy to respond to you',
+	`People won't always be nice to you`,
+	'Your friends will talk behind your back at times',
+	'People will use you',
+	'We always tend to find a person to blame no matter what',
+	`The life you're living right now is a dream for many people`,
+	'Money can buy happiness',
+	'Some people are just not meant to stay in your life, no matter how bad you want them to',
+	`You'll find many people together, but not in love.  You'll find many people in love, but not together`,
+	'Life of other will continue without you',
+	'Life is a solo trip with lots of visitors',
+	'Nobody really cares about how difficult your life is',
+	'Your actions define you, not your thoughts',
+	'We spend time worrying about the losses and not about the gains we have',
+	'Almost no one practices what they preach',
+	`You don't have to wait for an apology to forgive`,
+	'One day everything will end',
+	`Following rules doesn't always guarantee success`,
+	'People ruin the happiness of other just because they cannnot find their own',
+	'You rarely get a second chance',
+	'You usually have to options. To stay or to dare',
+	`Everyone's biased towards someone or something`,
+	'People will always judge you'	
+    ];
 	
     const BACON_MESSAGES = [
         'mmmm.... bacon!',
@@ -319,61 +319,61 @@ function determineMessage(event){
         `IT'S BACON!!!`,
 	'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
     ];
-	const CAPYBARA_FACTS = [
-	 'Like beavers, capybaras are strong swimmers.',
-      'Capybara toes are partially webbed.',
-      'Capybara fur is reddish to dark brown and is long and brittle.',
-      'The largest rodent on Earth is the Capybara.',
-      'Capybara are found throughout much of northern and central South America, though a small invasive population has been seen in Florida.',
-      `Like other rodents, capybaras’ teeth grow continuously, and they wear them down by grazing on aquatic plants, grasses, and other plentiful plants.`,
-      `Capybaras eat their own feces in the morning. That’s when their poo is protein rich from the high number of microbes digesting the previous day’s meals. Because the grasses they eat are so hard to digest, eating their waste essentially allows them to digest it twice.`,
-      'Capybara are closely related to guinea pigs and rock cavies, and more distantly related to chinchillas and agouti.',
-      `Capybara's pig-shaped bodies are adapted for life in bodies of water found in forests, seasonally flooded savannas, and wetlands.`,
-      'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
-      'Capybaras can stay underwater for up to five minutes at a time, according to the San Diego Zoo.',
-      `The scientific name for capybara comes from Hydro chaeris, which means 'water hog' in Greek.`,
-      `An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`
-	];
+    const CAPYBARA_FACTS = [
+	'Like beavers, capybaras are strong swimmers.',
+      	'Capybara toes are partially webbed.',
+      	'Capybara fur is reddish to dark brown and is long and brittle.',
+      	'The largest rodent on Earth is the Capybara.',
+      	'Capybara are found throughout much of northern and central South America, though a small invasive population has been seen in Florida.',
+      	`Like other rodents, capybaras’ teeth grow continuously, and they wear them down by grazing on aquatic plants, grasses, and other plentiful plants.`,
+      	`Capybaras eat their own feces in the morning. That’s when their poo is protein rich from the high number of microbes digesting the previous day’s meals. Because the grasses they eat are so hard to digest, eating their waste essentially allows them to digest it twice.`,
+      	'Capybara are closely related to guinea pigs and rock cavies, and more distantly related to chinchillas and agouti.',
+      	`Capybara's pig-shaped bodies are adapted for life in bodies of water found in forests, seasonally flooded savannas, and wetlands.`,
+      	'Capybaras sleep very little, usually napping throughout the day and grazing into and through the night.',
+      	'Capybaras can stay underwater for up to five minutes at a time, according to the San Diego Zoo.',
+      	`The scientific name for capybara comes from Hydro chaeris, which means 'water hog' in Greek.`,
+      	`An Amazon tribe calls the capybara Kapiyva or 'master of the grasses' in their native language.`
+    ];
 	
     const BRAD_FACTS = [
-      `A type of 'immortal' jellyfish is capable of cheating death indefinitely.`,
-      'Octopuses have three hearts.',
-      'Butterflies can taste with their feet.',
-      'Cats and horses are highly susceptible to black widow venom, but dogs are relatively resistant. Sheep and rabbits are apparently immune.',
-      'Sharks kill fewer than 10 people per year. Humans kill about 100 million sharks per year.',
-      'Wild dolphins call each other by name.',
-      'Young goats pick up accents from each other.',
-      `Humpback whale songs spread like 'cultural ripples from one population to another.'`,
-      'Tardigrades are extremely durable microscopic animals that exist all over Earth. They can survive any of the following: 300 degrees Fahrenheit (149 Celsius), -458 degrees F (-272 C), the vacuum of space, pressure six times stronger than the ocean floor and more than a decade without food.',
-      'Horses use facial expressions to communicate with each other.',
-      `Elephants have a specific alarm call that means 'human.'`,
-      `Squirrels can't burp or vomit.`,
-      'Less time separates the existence of humans and the tyrannosaurus rex than the T-rex and the stegosaurus.',
-      `There's a place on Earth where seagulls prey on right whales.`,
-      `Owls don't have eyeballs. They have eye tubes.`,
-      'Animals with smaller bodies and faster metabolism see in slow motion.',
-      `Dogs' sense of smell is about 100,000 times stronger than humans', but they have just one-sixth our number of taste buds.`,
-      'The extinct colossus penguin stood as tall as LeBron James.',
-      `Male gentoo and Adelie penguins 'propose' to females by giving them a pebble.`,
-      `Azara's owl monkeys are more monogamous than humans.`,
-      `Barn owls are normally monogamous, but about 25 percent of mated pairs 'divorce.'`,
-      'A group of parrots is known as a pandemonium.',
-      'Polar bears have black skin.',
-      'Reindeer eyeballs turn blue in winter to help them see at lower light levels.',
-      'A human brain operates on about 15 watts.',
-      'Warmer weather causes more turtles to be born female than male.',
-      'African buffalo herds display voting behavior, in which individuals register their travel preference by standing up, looking in one direction and then lying back down. Only adult females can vote.',
-      'If a honeybee keeps waggle dancing in favor of an unpopular nesting site, other workers headbutt her to help the colony reach a consensus.',
-      'Honeybees can flap their wings 200 times every second.',
-      'The claws of a mantis shrimp can accelerate as quickly as a .22-caliber bullet.',
-      'A single strand of spider silk is thinner than a human hair, but also five times stronger than steel of the same width. A rope just 2 inches thick could reportedly stop a Boeing 747.',
-      `A supercolony of invasive Argentine ants, known as the 'California large', covers 560 miles of the U.S. West Coast. It's currently engaged in a turf war with a nearby supercolony in Mexico.`,
-      'The recently discovered bone-house wasp stuffs the walls of its nest with dead ants.',
-      'By eating pest insects, bats save the U.S. agriculture industry an estimated $3 billion per year.',
-      'Fourteen new species of dancing frogs were discovered in 2014, raising the global number of known dancing-frog species to 24.',
-      'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.',
-      'Humans can survive underwater. But not for very long.',
-    ];
+      	`A type of 'immortal' jellyfish is capable of cheating death indefinitely.`,
+      	'Octopuses have three hearts.',
+      	'Butterflies can taste with their feet.',
+      	'Cats and horses are highly susceptible to black widow venom, but dogs are relatively resistant. Sheep and rabbits are apparently immune.',
+      	'Sharks kill fewer than 10 people per year. Humans kill about 100 million sharks per year.',
+      	'Wild dolphins call each other by name.',
+      	'Young goats pick up accents from each other.',
+      	`Humpback whale songs spread like 'cultural ripples from one population to another.'`,
+      	'Tardigrades are extremely durable microscopic animals that exist all over Earth. They can survive any of the following: 300 degrees Fahrenheit (149 Celsius), -458 degrees F (-272 C), the vacuum of space, pressure six times stronger than the ocean floor and more than a decade without food.',
+      	'Horses use facial expressions to communicate with each other.',
+      	`Elephants have a specific alarm call that means 'human.'`,
+      	`Squirrels can't burp or vomit.`,
+      	'Less time separates the existence of humans and the tyrannosaurus rex than the T-rex and the stegosaurus.',
+      	`There's a place on Earth where seagulls prey on right whales.`,
+      	`Owls don't have eyeballs. They have eye tubes.`,
+      	'Animals with smaller bodies and faster metabolism see in slow motion.',
+      	`Dogs' sense of smell is about 100,000 times stronger than humans', but they have just one-sixth our number of taste buds.`,
+      	'The extinct colossus penguin stood as tall as LeBron James.',
+      	`Male gentoo and Adelie penguins 'propose' to females by giving them a pebble.`,
+      	`Azara's owl monkeys are more monogamous than humans.`,
+      	`Barn owls are normally monogamous, but about 25 percent of mated pairs 'divorce.'`,
+      	'A group of parrots is known as a pandemonium.',
+      	'Polar bears have black skin.',
+      	'Reindeer eyeballs turn blue in winter to help them see at lower light levels.',
+      	'A human brain operates on about 15 watts.',
+      	'Warmer weather causes more turtles to be born female than male.',
+      	'African buffalo herds display voting behavior, in which individuals register their travel preference by standing up, looking in one direction and then lying back down. Only adult females can vote.',
+      	'If a honeybee keeps waggle dancing in favor of an unpopular nesting site, other workers headbutt her to help the colony reach a consensus.',
+      	'Honeybees can flap their wings 200 times every second.',
+      	'The claws of a mantis shrimp can accelerate as quickly as a .22-caliber bullet.',
+      	'A single strand of spider silk is thinner than a human hair, but also five times stronger than steel of the same width. A rope just 2 inches thick could reportedly stop a Boeing 747.',
+      	`A supercolony of invasive Argentine ants, known as the 'California large', covers 560 miles of the U.S. West Coast. It's currently engaged in a turf war with a nearby supercolony in Mexico.`,
+      	'The recently discovered bone-house wasp stuffs the walls of its nest with dead ants.',
+      	'By eating pest insects, bats save the U.S. agriculture industry an estimated $3 billion per year.',
+      	'Fourteen new species of dancing frogs were discovered in 2014, raising the global number of known dancing-frog species to 24.',
+      	'A sea lion is the first nonhuman mammal with a proven ability to keep a beat.',
+      	'Humans can survive underwater. But not for very long.',
+    ];	
     const BRAD_WRATH = [
         'Autobots! Roll out!',
         'Freedom is the right of all sentient beings',
@@ -402,8 +402,8 @@ function determineMessage(event){
 	'Signs point to yes',
 	'According to the prophesy, yes.',
 	'Are you calling me a liar?'  
-    ]
-	const PET_PEVES_LIST = [
+    ];
+    const PET_PEVES_LIST = [
 	'My pet peeve is people who clip their nails at work',
 	'My pet peeve is people who chew loudly',
 	'My pet peeve is people doing burpies by me',	
@@ -419,7 +419,7 @@ function determineMessage(event){
 	'My pet peeve is being interrupted when having a conversation with someone',
 	'My pet peeve is when people invite themselves in to a conversation I am having with someone else',	
 	'My pet peeve is when whoever creates these responses sullies my name by leaving a typo in there.'
-	]
+	];
     const TELL_JOKE = [
 	'Ok, knock-knock',
 	'Look in the mirror',
@@ -524,18 +524,16 @@ function determineMessage(event){
 	`What’s another word for Thesaurus?`,
 	`When everything is coming your way, you’re in the wrong lane.`,
 	'Do you want to know how keep a moron in suspense?'    
-
-    ]
+    ];
     const WHOS_THERE = [
 	'Seriously, you thought I was going to tell a knock knock joke?',
 	`Shouldn't you be working?`,
 	'You must really be desperate for something to do if you expect me to keep you entertained.',
 	`"kNoCk KnOcK!" Durr!`    
-    ]	    
+    ];	    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
-
     else if (IS_THANKS_MESSAGE){
         if ((event.user.indexOf('UGACR0GE4') > -1) || (event.user.indexOf('U9Z6ZMZPT') > -1)){
             listToUse = SPENCER_MESSAGES;
@@ -562,21 +560,21 @@ function determineMessage(event){
     else if (IS_THAT_A_FACT) {
 	listToUse = IS_THAT_A_FACT_MESSAGE;
     } 
-	else if (IS_CAPYBARA_FACT) {
+    else if (IS_CAPYBARA_FACT) {
 	listToUse = CAPYBARA_FACTS;	
 	}	
     else if (IS_TELL_JOKE) {
 	listToUse = TELL_JOKE;
     }
-	else if (ARE_PET_PEEVES) {
-	listToUse = PET_PEVES_LIST	
-	}	
+    else if (ARE_PET_PEEVES) {
+	listToUse = PET_PEVES_LIST;	
+    }	
     else if (IS_WHOS_THERE) {
 	listToUse = WHOS_THERE;
     }	    
-	else if (IS_TRUTH) {
+    else if (IS_TRUTH) {
 	listToUse = TRUTH_MESSAGES;
-	}	
+    }	
     return listToUse[Math.floor(Math.random() * listToUse.length)];
 }
 
