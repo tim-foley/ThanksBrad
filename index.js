@@ -7,9 +7,9 @@ const myCache = new nodeCache({stdTTL, checkperiod: 60});
 
 const app = express();
 
-const bradOnEachTeam = {
-  'TDJ8STMFE': 'UJT4QPQ90',
-  'T2TJSK16K': 'UGACR0GE4'
+const timOnEachTeam = {
+  'TDJ8STMFE': 'U2U3DH06N',
+  'T2TJSK16K': 'U2U3DH06N'
 };
 
 app.use(bodyParser());
@@ -24,11 +24,11 @@ app.post('/', function (req, res) {
     return;
   }
   const event = body ? body.event : null;
-  let brad = bradOnEachTeam[event.team];
+  let tim = timOnEachTeam[event.team];
     
     
-  if (typeof event.text === 'string' && event.text.indexOf(brad) > -1) {
-    messageAsBrad(body.token, event, (err, result) => {
+  if (typeof event.text === 'string' && event.text.indexOf(tim) > -1) {
+    messageAsTim(body.token, event, (err, result) => {
       res.status(200).send({err: err, result: result});
       return;
     });
@@ -40,7 +40,7 @@ app.post('/', function (req, res) {
 
 })
 
-function messageAsBrad(token, event, cb) {
+function messageAsTim(token, event, cb) {
   if (typeof event !== 'object') return cb();
 
 
