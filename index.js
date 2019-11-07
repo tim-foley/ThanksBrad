@@ -304,7 +304,7 @@ function determineMessage(event){
 		`You don't have to wait for an apology to forgive`,
 		'One day everything will end',
 		`Following rules doesn't always guarantee success`,
-		'People ruin the happiness of other just becaus ehty cannnot find their own',
+		'People ruin the happiness of other just becaus they cannnot find their own',
 		'You rarely get a second chance',
 		'You usually have to options. To stay or to dare',
 		`Everyone's biased towards someone or something`,
@@ -380,7 +380,7 @@ function determineMessage(event){
         `Until I return I'm leaving you in command. I know you won’t let me down`,
         'This universe, no matter how vast will never be big enough for you and I to coexist',
         'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
-        `It’s been an honor serving with you`,
+        `It’s been an honor serving with you`
     ];
     const IS_THAT_A_FACT_MESSAGE = [
 	'Do you doubt me?',
