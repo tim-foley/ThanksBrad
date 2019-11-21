@@ -107,54 +107,54 @@ function determineMessage(event){
 	].find(phrase => eventText.indexOf(phrase) > -1);    
     
     const IS_BRAD_WRATH = [
-	'autobots',
-	'rollout!',
-	'optimus',
-	'prime',
-	'transformers',
-	'megatron',
-	'cybertron',
-	'allspark',
-	'decepticons',
-	'bumblebee'
+		'autobots',
+		'rollout!',
+		'optimus',
+		'prime',
+		'transformers',
+		'megatron',
+		'cybertron',
+		'allspark',
+		'decepticons',
+		'bumblebee'
     ].find(phrase => eventText.indexOf(phrase) > -1);    
     
     const ARE_PET_PEEVES = [
-	'peeve',
-	'annoys',
-	'bothers'		
+		'peeve',
+		'annoys',
+		'bothers'		
     ].find(phrase => eventText.indexOf(phrase) > -1);    
 	
     const IS_TELL_JOKE = [
-	'tellmeajoke',
-	'knockknock',
-	'knowanyjokes'
+		'tellmeajoke',
+		'knockknock',
+		'knowanyjokes'
     ].find(phrase => eventText.indexOf(phrase) > -1);  
 	
     const IS_WHOS_THERE = [
-	'whosthere',
-	'whoisthere',
-	'whosethere',
-	'whobethere'
+		'whosthere',
+		'whoisthere',
+		'whosethere',
+		'whobethere'
     ].find(phrase => eventText.indexOf(phrase) > -1); 
 	
     const IS_TRUTH = [
     	'truths',
-	'wisdom',
-	'sayings',
-	'potato'
+		'wisdom',
+		'sayings',
+		'potato'
     ].find(phrase => eventText.indexOf(phrase) > -1); 
 	
     let listToUse;
     const BRAD_BOT_ABUSE  = [
-	'Cool it now, I have other things to do besides receive your praise,',
-	'Ok, this has been fun, but you should probably get back to work now,',
-	'I heard you the first time, Jeeze!',
-	`Keep this up and you'll burn through my free Heroku plan!`,
-	'Stop talking to me', 
-	'Seriously, stop talking',
-	`Here are the latest rain forest test results: "You are a horrible person." That's what it says: a horrible person. We weren't even testing for that.`,
-	`Okay, look; we both said a lot of things you're going to regret, but I think we can put our difference behind us. For science. You monster.`
+		'Cool it now, I have other things to do besides receive your praise,',
+		'Ok, this has been fun, but you should probably get back to work now,',
+		'I heard you the first time, Jeeze!',
+		`Keep this up and you'll burn through my free Heroku plan!`,
+		'Stop talking to me', 
+		'Seriously, stop talking',
+		`Here are the latest rain forest test results: "You are a horrible person." That's what it says: a horrible person. We weren't even testing for that.`,
+		`Okay, look; we both said a lot of things you're going to regret, but I think we can put our difference behind us. For science. You monster.`
     ];
 	
     const SPENCER_MESSAGES = [
@@ -172,24 +172,24 @@ function determineMessage(event){
         'I thought that the judge also said that you could not talk to me',
         'Did you dress in the dark today',
         'Oh, are you still here', 
-	'You should have worn the brown pants today',
+		'You should have worn the brown pants today',
         'Dude. Deodorant.',
         'Anyone else smell that? Wait... it is just',
-	'I hate you',
-	'Shut it',
-	'Shut your pie hole',
-	'You did NOT just say that',
-	`I can't believe you just said that`,
-	'Are you trying to annoy me',
-	'May your headphones snag on every door handle',
-	`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
-	'May you forever feel your cell phone vibrating in the pocket it is not even in',
-	'May the chocolate chips in your cookies always turn out to be raisins',
-	`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
-	'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
-	'May you never be quite certain as to whether that pressure is a fart or a poop',
-	`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
-	`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
+		'I hate you',
+		'Shut it',
+		'Shut your pie hole',
+		'You did NOT just say that',
+		`I can't believe you just said that`,
+		'Are you trying to annoy me',
+		'May your headphones snag on every door handle',
+		`May you press 'A' too hastily and be forced to speak with the nurse at the Pokemon Center all over again`,
+		'May you forever feel your cell phone vibrating in the pocket it is not even in',
+		'May the chocolate chips in your cookies always turn out to be raisins',
+		`May your tea be too hot when you receive it, and too cold by the time you remember it's there`,
+		'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
+		'May you never be quite certain as to whether that pressure is a fart or a poop',
+		`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
+		`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
     ];
 
     const BYE_MESSAGES = [
@@ -258,57 +258,57 @@ function determineMessage(event){
         'I bet you would love some Active donuts,',
         'Would you like a :fist: Hurtz Donut,',
         'DONUT TELL ME WHAT TO DO',
-	`click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g`,
+		`click here: https://lmgtfy.com/?q=worst+donuts+near+me&s=g`,
         'My tummy feels funny.'
     ];
     
     const TRUTH_MESSAGES = [
-	`You're the only one holding yourself back`,
-	'The world owes you absolutely nothing',
-	`Investing in yourself isn't selfish`,
-	`What other people think of you really doesn't matter`,
-	`You don't have to please everyone`,
-	`Comparing your Chapter 1 with someone else's Chapter 9 is pure stupidity`,
-	`There's another way.  There always is`,
-	'A negative opinion always hits harder than a positive one',
-	'Your ideas are useless if not implemented',
-	`It's not what you say, It's what they hear`,
-	`Good enough isn't good enough if it can be better`,
-	`Try a little harder.  You'll be glad you did`,
-	'Failure is a chance to restart',
-	`Most of the time the people who talk about how hard they work don't actually work that hard`,
-	`Just because you're busy doesn't mean you're accomplishing something`,
-	'The world is full of idiots who think they are geniuses',
-	`You're unique.  Just like everyone else`,
-	`You're ridiculously average, at best`,
-	'You know a lot less than what you think you do',
-	'You cannot control lige, but you can change the way you see life',
-	'Life will not be perfect',
-	`Most of us don't know how to say 'No'`,
-	'People will hate you for no reason',
-	'Nobody is actually too busy to respond to you',
-	`People won't always be nice to you`,
-	'Your friends will talk behind your back at times',
-	'People will use you',
-	'We always tend to find a person to blame no matter what',
-	`The life you're living right now is a dream for many people`,
-	'Money can buy happiness',
-	'Some people are just not meant to stay in your life, no matter how bad you want them to',
-	`You'll find many people together, but not in love.  You'll find many people in love, but not together`,
-	'Life of other will continue without you',
-	'Life is a solo trip with lots of visitors',
-	'Nobody really cares about how difficult your life is',
-	'Your actions define you, not your thoughts',
-	'We spend time worrying about the losses and not about the gains we have',
-	'Almost no one practices what they preach',
-	`You don't have to wait for an apology to forgive`,
-	'One day everything will end',
-	`Following rules doesn't always guarantee success`,
-	'People ruin the happiness of other just because they cannnot find their own',
-	'You rarely get a second chance',
-	'You usually have to options. To stay or to dare',
-	`Everyone's biased towards someone or something`,
-	'People will always judge you'	
+		`You're the only one holding yourself back`,
+		'The world owes you absolutely nothing',
+		`Investing in yourself isn't selfish`,
+		`What other people think of you really doesn't matter`,
+		`You don't have to please everyone`,
+		`Comparing your Chapter 1 with someone else's Chapter 9 is pure stupidity`,
+		`There's another way.  There always is`,
+		'A negative opinion always hits harder than a positive one',
+		'Your ideas are useless if not implemented',
+		`It's not what you say, It's what they hear`,
+		`Good enough isn't good enough if it can be better`,
+		`Try a little harder.  You'll be glad you did`,
+		'Failure is a chance to restart',
+		`Most of the time the people who talk about how hard they work don't actually work that hard`,
+		`Just because you're busy doesn't mean you're accomplishing something`,
+		'The world is full of idiots who think they are geniuses',
+		`You're unique.  Just like everyone else`,
+		`You're ridiculously average, at best`,
+		'You know a lot less than what you think you do',
+		'You cannot control lige, but you can change the way you see life',
+		'Life will not be perfect',
+		`Most of us don't know how to say 'No'`,
+		'People will hate you for no reason',
+		'Nobody is actually too busy to respond to you',
+		`People won't always be nice to you`,
+		'Your friends will talk behind your back at times',
+		'People will use you',
+		'We always tend to find a person to blame no matter what',
+		`The life you're living right now is a dream for many people`,
+		'Money can buy happiness',
+		'Some people are just not meant to stay in your life, no matter how bad you want them to',
+		`You'll find many people together, but not in love.  You'll find many people in love, but not together`,
+		'Life of other will continue without you',
+		'Life is a solo trip with lots of visitors',
+		'Nobody really cares about how difficult your life is',
+		'Your actions define you, not your thoughts',
+		'We spend time worrying about the losses and not about the gains we have',
+		'Almost no one practices what they preach',
+		`You don't have to wait for an apology to forgive`,
+		'One day everything will end',
+		`Following rules doesn't always guarantee success`,
+		'People ruin the happiness of other just because they cannnot find their own',
+		'You rarely get a second chance',
+		'You usually have to options. To stay or to dare',
+		`Everyone's biased towards someone or something`,
+		'People will always judge you'	
     ];
 	
     const BACON_MESSAGES = [
@@ -317,7 +317,8 @@ function determineMessage(event){
         ':bacon:',
         ':alert_bacon:',
         `IT'S BACON!!!`,
-	'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?'
+		'Is it nice, my preciousss? Is it juicy? Is it scrumptiously crunchable?',
+		'I heard that Brad was bringing bacon tomorrow.'
     ];
     const CAPYBARA_FACTS = [
 	'Like beavers, capybaras are strong swimmers.',
@@ -422,107 +423,109 @@ function determineMessage(event){
 	];
     const TELL_JOKE = [
 	'Ok, knock-knock',
+	`A guy goes in for a job interview and sits down with the boss.  The boss asks him, “What do you think is your worst quality?” The man says “I’m probably too honest.” The boss says, “That’s not a bad thing, I think being honest is a good quality.”The man replies, “I don’t care about what you think!”`,
+	`My memory has gotten so bad it has actually caused me to lose my job. I’m still employed. I just can’t remember where.`,
+	`Some people say the glass is half full. Some people say the glass is half empty. Engineers say the glass is twice as big as necessary.`,
+	`I asked the corporate wellness officer, “Can you teach me yoga?” He said, “How flexible are you?” I said, “I can’t make Tuesdays.”`,
+	`My boss says I have a preoccupation with vengeance. We’ll see about that.`,
+	`The reason we “nod off to sleep” is so it looks like we’re just emphatically agreeing with everything when we’re in a boring meeting.`,
+	`When an employment application asks who is to be notified in case of emergency, I always write, “A very good doctor”.`,
+	`Team work is important; it helps to put the blame on someone else.`,
+	`I’m great at multitasking. I can waste time, be unproductive, and procrastinate all at once.`,
+	`Nothing ruins a Friday more than an understanding that today is Tuesday.`,
+	`I can’t believe I got fired from the calendar factory. All I did was take a day off.`,
+	`I always tell new hires, don’t think of me as your boss, think of me as a friend who can fire you.`,
+	`My resumé is just a list of things I hope you never ask me to do.`,
+	`The proper way to use a stress ball is to throw it at the last person to upset you.`,
+	`There is a new trend in our office; everyone is putting names on their food. I saw it today, while I was eating a sandwich named Kevin.`,
+	`My annual performance review says I lack “passion and intensity.” I guess management hasn’t seen me alone with a Big Mac.`,
+	`I get plenty of exercise – jumping to conclusions, pushing my luck, and dodging deadlines.`,
+	`How do construction workers party? They raise the roof.`,
+	`If every day is a gift, I’d like a receipt for Monday. I want to exchange it for another Friday.`,
+	`Feeling stressed out? Make a nice cup of hot tea and then spill it in the lap of whoever’s bugging you.`,
+	`I use artificial sweetener at work. I add it to everything I say to my boss.`,
+	`A clean desk is a sign of a cluttered desk drawer.`,
+	`The only thing worse than seeing something done wrong is seeing it done slowly.`,
+	`If at first you don’t succeed, redefine success.`,
+	`Give me ambiguity or give me something else.`,
+	`We have enough youth. How about a fountain of “Smart”?`,
+	`I started out with nothing and I still have most of it.`,
+	`The boss frowns on anyone yelling: “Hey Weirdo!” He says too many people look up from their work.`,
+	`Things really haven’t gotten worse. We’ve just improved our inter-departmental communication skills.`,
+	`Anything that could possibly go wrong often does – as well as a thing or two that couldn’t possibly.`,
+	`If it wasn’t for the last minute, nothing would get done.`,
+	`If our boss makes a mistake, it is our mistake.`,
+	`A diplomat is someone who can tell you to go to hell in such a way that you will look forward to the trip.`,
+	`To steal ideas from one person is plagiarism. To steal from many is research.`,
+	`A bus station is where a bus stops. A train station is where a train stops. On my desk, I have a work station…`,
+	`I like work. It fascinates me. I sit and look at it for hours.`,
+	`I’m out of bed and dressed. What more do you want?`,
+	`Experience is what you get when you didn’t get what you wanted.`,
+	`To be sure of hitting the target, shoot first and call whatever you hit the target.`,
+	`To err is human, to blame it on someone else shows management potential.`,
+	`A man can do more than he thinks he can, but he usually does less than he thinks he does.`,
+	`I don’t work well under pressure… or any other circumstance.`,
+	`Knowledge is knowing a tomato is a fruit; wisdom is not putting it in a fruit salad.`,
+	`I thought I wanted a career, turns out I just wanted paychecks`,
+	`Some people are like Slinkies … not really good for anything, but you can’t help smiling when you see one tumble down the stairs.`,
+	`A work week is so rough that after Monday and Tuesday, even the calendar says WTF.`,
+	`I didn’t say it was your fault, I said I was blaming you.`,
+	`Laugh at your problems, everybody else does.`,
+	`Artificial intelligence is no match for natural stupidity.`,
+	`He who smiles in a crisis has found someone to blame.`,
+	`Some cause happiness wherever they go. Others whenever they go.`,
+	`Worrying works! 90% of the things I worry about never happen.`,
+	`I couldn’t work today because of an eye problem. I just can’t see myself working today.`,
+	`When in doubt, mumble.`,
+	`You’re never too old to learn something stupid.`,
+	`When tempted to fight fire with fire, remember that the Fire Department usually uses water.`,
+	`When it comes to work, change is inevitable, except from the vending machine.`,
+	`If you keep your feet firmly on the ground, you’ll have trouble putting on your pants.`,
+	`Some mistakes are too much fun to only make once.`,
+	`Keep the dream alive: hit the snooze button.`,
+	`If you can stay calm while all around you is chaos, then you probably haven’t completely understood the situation.`,
+	`Hard work never killed anyone, but why take the chance?`,
+	`I have all the money I’ll ever need – if I die by 4:00 p.m. today.`,
+	`The right to be heard does not automatically include the right to be taken seriously.`,
+	`Archaeologist: someone whose career lies in ruins.`,
+	`The probability of someone watching you is proportional to the stupidity of your action.`,
+	`It matters not whether you win or lose: what matters is whether I win or lose.`,
+	`If you can’t convince them, confuse them.`,
+	`Progress is made by lazy people looking for an easier way to do things.`,
+	`I don’t have a solution, but I do admire the problem.`,
+	`People tend to make rules for others and exceptions for themselves.`,
+	`Stress is when you wake up screaming and you realize you haven’t fallen asleep yet.`,
+	`Sometimes the best helping hand you can give is a good, firm push.`,
+	`Drink coffee! Do stupid things faster with more energy!`,
+	`I don’t mind coming to work, it’s the 8-hour wait to go home I can’t stand.`,
+	`A positive attitude may not solve all your problems, but it will annoy enough people to make it worth the effort.`,
+	`The trouble with being punctual is that nobody’s there to appreciate it.`,
+	`Just about the time when you think you can make ends meet, somebody moves the ends.`,
+	`My biggest professional ambition is to get a desk where no one can see my computer monitor but me.`,
+	`A committee is twelve men doing the work of one.`,
+	`If everything seems to be coming your way, you’re probably in the wrong lane.`,
+	`It’s not how good your work is, it’s how well you explain it.`,
+	`Efficiency is a highly developed form of laziness.`,
+	`The farther away the future is, the better it looks.`,
+	`Some of us learn from the mistakes of others; the rest of us have to be the others.`,
+	`Discretion is being able to raise your eyebrow instead of your voice.`,
+	`I pretend to work as long as they pretend to pay me.`,
+	`I like my job only marginally more than I like being homeless.`,
+	`The trouble with doing something right the first time is that nobody appreciates how difficult it was.`,
+	`The human brain is a wonderful thing. It starts working the moment you are born, and never stops until you stand up to speak in public.`,
+	`Do not walk behind me, for I may not lead. Do not walk ahead of me, for I may not follow. Do not walk beside me either. Just pretty much leave me alone.`,
+	`There are two kinds of people who don’t say much: those who are quiet and those who talk a lot.`,
+	`With a calendar, your days are numbered.`,
+	`A hard thing about a business is minding your own.`,
+	`I think they picked me for my motivational skills. Everyone always says they have to work twice as hard when I’m around!`,
+	`Early to bed, early to rise makes people suspicious.`,
+	`Many people quit looking for work when they find a job.`,
+	`All I ask is a chance to prove money can’t make me happy.`,
+	`It’s not who you know, it’s whom you know.`,
+	`Nothing is foolproof to a sufficiently talented fool.`,
+	`I have a lot of jokes about unemployed people but none of them work.`,
 	'Look in the mirror',
 	'7 percent of all statistics are made up on the spot.',
-	'A clear conscience is usually the sign of a bad memory.',
-	'A conclusion is the place where you got tired of thinking.',
-	'A conscience is what hurts when all your other parts feel so good.',
-	`A cop stopped me for speeding. He said, “Why were you going so fast?” I said, “See this thing my foot is on? It’s called an accelerator. When you push down on it, it sends more gas to the engine. The whole car just takes right off. And see this thing? This steers it.”`,
-	`A friend of mine once sent me a post card with a picture of the entire planet Earth taken from space. On the back it said, “Wish you were here.”`,
-	`A lot of people are afraid of heights. Not me, I’m afraid of widths.`,
-	'All those who believe in psychokinesis raise my hand.',
-	'Ambition is a poor excuse for not having enough sense to be lazy.',
-	'Bills travel through the mail at twice the speed of checks.',
-	`Borrow money from pessimists-they don’t expect it back.`,
-	'Change is inevitable….except from vending machines.',
-	'Cross country skiing is great if you live in a small country.',
-	'Dancing is a perpendicular expression of a horizontal desire.',
-	`Doing a little work around the house. I put fake brick wallpaper over a real brick wall, just so I’d be the only one who knew. People come over and I’m gonna say, “Go ahead, touch it…it feels real.”`,
-	`Drugs may lead to nowhere, but at least it’s the scenic route.`,
-	`Eagles may soar, but weasels don’t get sucked into jet engines.`,
-	`Everyone has a photographic memory. Some just don’t have film.`,
-	`Experience is something you don’t get until just after you need it.`,
-	'For every action, there is an equal and opposite criticism.',
-	'Half the people you know are below average.',
-	'Hard work pays off in the future. Laziness pays off now.',
-	`How do you tell when you’re out of invisible ink?`,
-	'I almost had a psychic girlfriend but she left me before we met.',
-	`I bought a house, on a one-way dead-end road. I don’t know how I got there.`,
-	'I bought a million lottery tickets. I won a dollar.',
-	`I bought some powdered water, but I don’t know what to add to it.`,
-	`I can remember the first time I had to go to sleep. Mom said, “Brad, time to go to sleep.” I said, “But I don’t know how.” She said, “It’s real easy. Just go down to the end of tired and hang a left.” So I went down to the end of tired, and just out of curiosity I hung a right. My mother was there, and she said “I thought I told you to go to sleep.”`,
-	`I couldn’t repair your brakes, so I made your horn louder.`,
-	'I eat swiss cheese from the inside out.',
-	'I had amnesia once or twice.',
-	`I hate it when my foot falls asleep during the day because that means it’s going to be up all night.`,
-	`I have an answering machine in my car. It says, “I’m home now. But leave a message and I’ll call when I’m out.”`,
-	'I intend to live forever – so far, so good.',
-	`I love to go shopping. I love to freak out salespeople. They ask me if they can help me, and I say, “Have you got anything I’d like?” Then they ask me what size I need, and I say, “Extra medium.”`,
-	`I planted some bird seed. A bird came up. Now I don’t know what to feed it.`,
-	`I saw a bank that said “24 Hour Banking”, but I don’t have that much time.`,
-	`I saw a sign: “Rest Area 25 Miles”. That’s pretty big. Some people must be really tired.`,
-	`I saw a small bottle of cologne and asked if it was for sale. She said, “It’s free with purchase.” I asked her if anyone bought anything today.`,
-	`I spilled spot remover on my dog. He’s gone now.`,
-	'I took a course in speed waiting. Now I can wait an hour in only ten minutes.',
-	'I used to have an open mind but my brains kept falling out.',
-	`I used to work in a fire hydrant factory. You couldn’t park anywhere near the place.`,
-	`I was going 70 miles an hour and got stopped by a cop who said, “Do you know the speed limit is 55 miles per hour?” “Yes, officer, but I wasn’t going to be out that long…”`,
-	`I was in a job interview and I opened a book and started reading. Then I said to the guy, “Let me ask you a question. If you are in a spaceship that is traveling at the speed of light, and you turn on the headlights, does anything happen?” He said, “I don’t know.” I said, “I don’t want your job.”`,
-	`I was sad because I had no shoes, until I met a man who had no feet. So I said, “Got any shoes you’re not using?”`,
-	'I was trying to daydream, but my mind kept wandering.',
-	`I went down the street to the 24-hour grocery. When I got there, the guy was locking the front door. I said, “Hey, the sign says you’re open 24 hours.” He said, “Yes, but not in a row.”`,
-	`I went into this bar and sat down next to a pretty girl. She looked at me and said, “Hey, you have two different colored socks on.” I said, “Yeah, I know, but to me they’re the same because I go by thickness.”`,
-	`I went to a 7-11 and asked for a 2×4 and a box of 3×5’s. The clerk said, “ten-four.”`,
-	`I went to a fancy french restaurant called “Deja Vu.” The headwaiter said, “Don’t I know you?”`,
-	`I went to a general store. They wouldn’t let me buy anything specifically.`,
-	`I went to a restaurant that serves “breakfast at any time”. So I ordered French Toast during the Renaissance.`,
-	`I went to the bank and asked to borrow a cup of money. They said, “What for?” I said, “I’m going to buy some sugar.”`,
-	`I went to the hardware store and bought some used paint. It was in the shape of a house. I also bought some batteries, but they weren’t included.`,
-	'I went to the museum where they had all the heads and arms from the statues that are in all the other museums.',
-	'I woke up one morning, and all of my stuff had been stolen and replaced by exact duplicates.',
-	`I worked in a health food store once. A guy came in and asked me, “If I melt dry ice, can I take a bath without getting wet?”`,
-	`I wrote a song, but I can’t read music so I don’t know what it is. Every once in a while I’ll be listening to the radio and I say, “I think I might have written that.”`,
-	`I’d kill for a Nobel Peace Prize.`,
-	`If at first you don’t succeed, then skydiving definitely isn’t for you.`,
-	'If Barbie is so popular, why do you have to buy her friends?',
-	'If everything seems to be going well, you have obviously overlooked something.',
-	'If you can wave a fan, and you can wave a club, can you wave a fan club?',
-	`If you must choose between two evils, pick the one you’ve never tried before.`,
-	'If you think nobody cares about you, try missing a couple of payments.',
-	'If you were going to shoot a mime, would you use a silencer?',
-	`If you write the word “monkey” a million times, do you start to think you’re Shakespeare?`,
-	`If you’re not part of the solution, you’re part of the precipitate.`,
-	'In my house on the ceilings I have paintings of the rooms above…so I never have to go upstairs.',
-	'In school, every period ends with a bell. Every sentence ends with a period. Every crime ends with a sentence.',
-	`It’s a small world, but I wouldn’t want to have to paint it.`,
-	'Join the Army, meet interesting people, kill them.',
-	'Many people quit looking for work when they find a job.',
-	'Monday is an awful way to spend 1/7th of your life.',
-	'My socks DO match. They’re the same thickness.',
-	'My theory of evolution is that Darwin was adopted.',
-	`Officer, I know I was going faster than 55MPH, but I wasn’t going to be on the road an hour.`,
-	`OK, so what’s the speed of dark?`,
-	'On the other hand, you have different fingers.',
-	`One night I walked home very late and fell asleep in somebody’s satellite dish. My dreams were showing up on TV’s all over the world.`,
-	`One time a cop pulled me over for running a stop sign. He said, “Didn’t you see the stop sign?” I said, “Yeah, but I don’t believe everything I read.”`,
-	'Plan to be spontaneous tomorrow.',
-	`Right now I’m having amnesia and deja vu at the same time.`,
-	'Smoking cures weight problems…eventually.',
-	`Someone sent me a postcard picture of the earth. On the back it said, “Wish you were here.”`,
-	'Sponges grow in the ocean. That just kills me. I wonder how much deeper the ocean would be if that didn’t happen.',
-	`Support bacteria – they’re the only culture some people have.`,
-	'The early bird gets the worm, but the second mouse gets the cheese.',
-	'The hardness of the butter is proportional to the softness of the bread.',
-	`The judge asked, “What do you plead?” I said, “Insanity, your honor, who in their right mind would park in the passing lane?”`,
-	'The problem with the gene pool is that there is no lifeguard.',
-	'The severity of the itch is proportional to the reach.',
-	`The sooner you fall behind, the more time you’ll have to catch up.`,
-	'To steal ideas from one person is plagiarism; to steal from many is research.',
-	`Today I dialed a wrong number… The other person said, “Hello?” and I said, “Hello, could I speak to Joey?”… They said, “Uh… I don’t think so…he’s only 2 months old.” I said, “I’ll wait.”`,
-	'What a nice night for an evening.',
-	'What happens if you get scared half to death twice?',
-	`What’s another word for Thesaurus?`,
-	`When everything is coming your way, you’re in the wrong lane.`,
 	'Do you want to know how keep a moron in suspense?'    
     ];
     const WHOS_THERE = [
@@ -534,13 +537,11 @@ function determineMessage(event){
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
     }
+	else if ((event.user.indexOf('UGACR0GE4') > -1) || (event.user.indexOf('U9Z6ZMZPT') > -1)){
+		listToUse = SPENCER_MESSAGES;
+	}		
     else if (IS_THANKS_MESSAGE){
-        if ((event.user.indexOf('UGACR0GE4') > -1) || (event.user.indexOf('U9Z6ZMZPT') > -1)){
-            listToUse = SPENCER_MESSAGES;
-        }
-        else{
-            listToUse = THANKS_MESSAGES;
-        }
+		listToUse = THANKS_MESSAGES;
     }
     else if (IS_DONUTS_MESSAGE){
         listToUse = DONUT_MESSAGES;
@@ -552,27 +553,27 @@ function determineMessage(event){
         listToUse = BYE_MESSAGES;   
     }
     else if (IS_BRAD_FACT) {
-	listToUse = BRAD_FACTS;
+		listToUse = BRAD_FACTS;
     }
     else if (IS_BRAD_WRATH) {
-	listToUse = BRAD_WRATH;
+		listToUse = BRAD_WRATH;
     }
     else if (IS_THAT_A_FACT) {
-	listToUse = IS_THAT_A_FACT_MESSAGE;
+		listToUse = IS_THAT_A_FACT_MESSAGE;
     } 
     else if (IS_CAPYBARA_FACT) {
-	listToUse = CAPYBARA_FACTS;	
+		listToUse = CAPYBARA_FACTS;	
 	}	
     else if (IS_TELL_JOKE) {
-	listToUse = TELL_JOKE;
+		listToUse = TELL_JOKE;
     }
     else if (ARE_PET_PEEVES) {
-	listToUse = PET_PEVES_LIST;	
+		listToUse = PET_PEVES_LIST;	
     }	
     else if (IS_WHOS_THERE) {
-	listToUse = WHOS_THERE;
+		listToUse = WHOS_THERE;
     }	    
-    else if (IS_TRUTH) {
+		else if (IS_TRUTH) {
 	listToUse = TRUTH_MESSAGES;
     }	
     return listToUse[Math.floor(Math.random() * listToUse.length)];
