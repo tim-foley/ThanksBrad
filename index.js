@@ -193,7 +193,7 @@ function determineMessage(event){
 		'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
 		'May you never be quite certain as to whether that pressure is a fart or a poop',
 		`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
-		`I don't want to tell you you're business, but if I were you, I'd leave me alone.`,
+		`I don't want to tell you your business, but if I were you, I'd leave me alone.`,
 		`You know, Awesome ends with me, and Ugly begins with U.`
     ];
 
@@ -538,7 +538,7 @@ function determineMessage(event){
     ];
     const WHOS_THERE = [
 	'Seriously, you thought I was going to tell a knock knock joke?',
-	`Shouldn't you be workinG rather than trying to get a bot to tell you knock-knock jokes?`,
+	`Shouldn't you be working rather than trying to get a bot to tell you knock-knock jokes?`,
 	'You must really be desperate for something to do if you expect me to keep you entertained.',
 	`"kNoCk KnOcK!" Durr!`    
     ];	    
