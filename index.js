@@ -131,6 +131,10 @@ function determineMessage(event){
 		'knowanyjokes'
     ].find(phrase => eventText.indexOf(phrase) > -1);  
 	
+	const IS_KNOCK_KNOCK = [
+		'knockknock'
+    ].find(phrase => eventText.indexOf(phrase) > -1);  
+	
     const IS_WHOS_THERE = [
 		'whosthere',
 		'whoisthere',
@@ -189,7 +193,8 @@ function determineMessage(event){
 		'May your chair product a sound similar to a fart, but only once, such that you cannot reproduce it to prove that it was just the chair',
 		'May you never be quite certain as to whether that pressure is a fart or a poop',
 		`It says so right here in your personnel file: Unlikable. Liked by no one. A bitter, unlikable loner who's passing shall not be mourned.`,
-		`I don't want to tell you you're business, but if I were you, I'd leave me alone.` 		
+		`I don't want to tell you you're business, but if I were you, I'd leave me alone.`,
+		`You know, Awesome ends with me, and Ugly begins with U.`
     ];
 
     const BYE_MESSAGES = [
@@ -383,6 +388,10 @@ function determineMessage(event){
         'Above all, do not lament my absence, for in my spark, I know that this is not the end, but merely a new beginning. Simply put, another transformation',
         `It’s been an honor serving with you`
     ];
+	const KNOCK_KNOCK = [
+		'Ok, knock-knock',
+		'Knock-knock'
+	];	
     const IS_THAT_A_FACT_MESSAGE = [
 	'Do you doubt me?',
 	'Google it.  I dare you.',
@@ -422,7 +431,6 @@ function determineMessage(event){
 	'My pet peeve is when whoever creates these responses sullies my name by leaving a typo in there.'
 	];
     const TELL_JOKE = [
-	'Ok, knock-knock',
 	`A guy goes in for a job interview and sits down with the boss.  The boss asks him, “What do you think is your worst quality?” The man says “I’m probably too honest.” The boss says, “That’s not a bad thing, I think being honest is a good quality.”The man replies, “I don’t care about what you think!”`,
 	`My memory has gotten so bad it has actually caused me to lose my job. I’m still employed. I just can’t remember where.`,
 	`Some people say the glass is half full. Some people say the glass is half empty. Engineers say the glass is twice as big as necessary.`,
@@ -530,7 +538,7 @@ function determineMessage(event){
     ];
     const WHOS_THERE = [
 	'Seriously, you thought I was going to tell a knock knock joke?',
-	`Shouldn't you be working?`,
+	`Shouldn't you be workinG rather than trying to get a bot to tell you knock-knock jokes?`,
 	'You must really be desperate for something to do if you expect me to keep you entertained.',
 	`"kNoCk KnOcK!" Durr!`    
     ];	    
@@ -557,6 +565,9 @@ function determineMessage(event){
     }
     else if (IS_BRAD_WRATH) {
 		listToUse = BRAD_WRATH;
+    }
+	else if (IS_KNOCK_KNOCK) {
+		listToUse = KNOCK_KNOCK;
     }
     else if (IS_THAT_A_FACT) {
 		listToUse = IS_THAT_A_FACT_MESSAGE;
