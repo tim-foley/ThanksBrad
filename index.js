@@ -544,10 +544,7 @@ function determineMessage(event){
     ];	    
     if (bradAbuseDetected(event.user)){
         listToUse = BRAD_BOT_ABUSE;
-    }
-	else if ((event.user.indexOf('UGACR0GE4') > -1) || (event.user.indexOf('U9Z6ZMZPT') > -1)){
-		listToUse = SPENCER_MESSAGES;
-	}		
+    }	
     else if (IS_THANKS_MESSAGE){
 		listToUse = THANKS_MESSAGES;
     }
